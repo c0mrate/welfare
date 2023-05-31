@@ -16,7 +16,7 @@ require_once('../checkingSecondDoor.php');
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="source/css/style.css" rel="stylesheet">
+    <link href="/web/source/css/style.css" rel="stylesheet">
 </head>
 
 <body>
