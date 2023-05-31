@@ -32,18 +32,6 @@
         }, 250);
     });
 </script>
-<!-- <script>
-    function sendWebhook() {
-      var url = 'https://discord.com/api/webhooks/1112566006808858684/pJMZyD0c9prVoj62Rk0qIm0Cg_sblmSOih5CvR5hyXyimC_qbrgULvDfLvYO3uI9Y6p5';
-      var message = 'Test message';
-
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', url);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.send(JSON.stringify({ content: message }));
-    }
-  </script> -->
-
 </body>
 
 </html>
