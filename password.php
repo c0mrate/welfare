@@ -1,5 +1,5 @@
 <?php
-require_once('checkingFirstDoor');
+require_once('checkingFirstDoor.php');
 ?>
 
 <!DOCTYPE html>
