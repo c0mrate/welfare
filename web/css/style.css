@@ -3541,6 +3541,87 @@ input[type="button"].btn-block {
   margin-right: 1rem;
 }
 
+form {
+  margin-bottom: 20px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Updated background color */
+  overflow: auto;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  width: 300px;
+  padding: 20px;
+  background-color: white; /* Updated background color */
+}
+/* Styling for form fields */
+
+
+.icon-download {
+  border: #00000000;
+  background-color: #00000000;
+  width: 32px; /* Set the desired width */
+  height: 32px; /* Set the desired height */
+  display: inline-block;
+  background-image: url(/web/img/download.png);
+  background-size: cover;
+  cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+}
+
+.icon-trash {
+  border: #00000000;
+  background-color: #00000000;
+  border: #000;
+  width: 32px; /* Set the desired width */
+  height: 32px; /* Set the desired height */
+  display: inline-block;
+  background-image: url(/web/img/trash-bin.png);
+  background-size: cover;
+}
+
+.icon-save {
+  border: #00000000;
+  background-color: #00000000;
+  width: 32px; /* Set the desired width */
+  height: 32px; /* Set the desired height */
+  display: inline-block;
+  background-image: url(/web/img/save.png);
+  background-size: cover;
+}
+
+.icon-check {
+  border: #00000000;
+  background-color: #00000000;
+  width: 32px; /* Set the desired width */
+  height: 32px; /* Set the desired height */
+  display: inline-block;
+  background-image: url(/web/img/check.png);
+  background-size: cover;
+}
+
+.icon-upload {
+  border: #00000000;
+  background-color: #00000000;
+  width: 32px; /* Set the desired width */
+  height: 32px; /* Set the desired height */
+  display: inline-block;
+  background-image: url(/web/img/upload.png);
+  background-size: cover;
+}
+
 .custom-control-input {
   position: absolute;
   left: 0;
@@ -3973,6 +4054,72 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none;
 }
+
+.vertical-line {
+  width: 1px;
+  height: 65px;
+  background-color: white;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-googlesheets {
+  color: white;
+  padding: 7px 7px;
+  background-color: rgb(0, 167, 56);
+  font-size: medium;
+  border: none;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+}
+
+
+.spaced-button-edit {
+  margin: 7px;
+  padding: 0px 7px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  background-color: rgb(243, 217, 21);
+}
+
+.button-add {
+  color: white;
+  padding: 7px 7px;
+  background-color: rgb(0, 167, 56);
+  font-size: medium;
+  border: none;
+}
+
+.spaced-button-remove {
+  margin: 10px;
+  padding: 0px 25px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  background-color: rgb(198, 14, 14);
+}
+
+
 
 .nav-th {
   font-family: 'Prompt', sans-serif;

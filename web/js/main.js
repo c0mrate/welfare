@@ -102,3 +102,19 @@
     
 })(jQuery);
 
+
+
+
+//remove
+function openPopup() {
+    // Show the overlay and popup
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("popup").style.display = "block";
+  }
+
+  function closePopup() {
+    // Hide the overlay and popup
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("popup").style.display = "none";
+  }
+  

@@ -13,7 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/animate/" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -83,10 +83,17 @@
                     <div class="con-a-center">
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="store.html" class="nav-item nav-link nav-th">หน้าหลัก</a>
-                                <a href="product.html" class="nav-item nav-link nav-th">สินค้าทั้งหมด</a>
-                                <a href="detail.html" class="nav-item nav-link nav-th">รายละเอียดสินค้า</a>
-                                <a href="status.html" class="nav-item nav-link nav-th active">สถานะคำสั่งซื้อ</a>
+                                <a href="../store.html" class="nav-item nav-link nav-th">หน้าหลัก</a>
+                                <a href="../product.html" class="nav-item nav-link nav-th">สินค้าทั้งหมด</a>
+                                <a href="../detail.html" class="nav-item nav-link nav-th">รายละเอียดสินค้า</a>
+                                <a href="../status.html" class="nav-item nav-link nav-th">สถานะคำสั่งซื้อ</a>
+                                <a class="nav-item nav-link nav-th">|</a>
+                                <a href="editStatus.html"
+                                    class="nav-item nav-link nav-th active">แก้ไขสถานะคำสั่งซื้อ</a>
+                                <a href="customerOrder.html"
+                                    class="nav-item nav-link nav-th">ประวัติการซื้อสำเร็จ</a>
+                                <a href="../product/productList.html"
+                                    class="nav-item nav-link nav-th">แก้รายการสินค้า</a>
                             </div>
                             <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                                 <a href="/account/login" class="btn px-0 ml-3">
@@ -106,88 +113,35 @@
     </div>
     <!-- Navbar End -->
 
-
-    <!-- Breadcrumb Start -->
-    <div class="container-fluid">
-        <div class="row px-xl-5">
-            <div class="col-12">
-                <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#">หน้าหลัก</a>
-                    <span class="breadcrumb-item active">สถานะคำสั่งซื้อ</span>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
-
-
     <!-- Contact Start -->
     <div class="container-fluid">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span
                 class="bg-secondary pr-3">สถานะคำสั่งซื้อ</span></h2>
-        <!-- <div class="row px-xl-5">
-            <div class="col-lg-7 mb-5">
-                <div class="contact-form bg-light p-30">
-                    <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                required="required" data-validation-required-message="Please enter your name" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email"
-                                required="required" data-validation-required-message="Please enter your email" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                required="required" data-validation-required-message="Please enter a subject" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <textarea class="form-control" rows="8" id="message" placeholder="Message"
-                                required="required"
-                                data-validation-required-message="Please enter your message"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div>
-                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
-                                Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-5 mb-5">
-                <div class="bg-light p-30 mb-30">
-                    <iframe style="width: 100%; height: 250px;"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-                <div class="bg-light p-30 mb-3">
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
-                </div>
-            </div>
-        </div> -->
         <div class="container-fluid">
             <div class="row px-xl-5">
                 <div class="col-lg-13 table-responsive mb-5">
                     <table class="table table-light table-borderless table-hover text-center mb-0">
                         <thead class="thead-dark">
                             <tr>
-                                <th>สินค้า</th>
+                                <th>เลขสินค้า</th>
+                                <th>ชื่อสินค้า</th>
                                 <th>ราคา</th>
                                 <th>จำนวน</th>
+                                <th>สลิป</th>
+                                <th>ข้อมูลสินค้า</th>
                                 <th>สถานะ</th>
-                                <th>เช็คสถานะกับขนส่ง</th>
+                                <th>เลขติดตามสินค้า</th>
+                                <th>ข้อมูลลูกค้า</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody class="align-middle">
                             <tr>
-                                <td class="align-middle"><img src="img/product-2.jpg" alt="" style="width: 50px;">
-                                    Product Name</td>
+                                <td class="align-middle">
+                                    id001
+                                </td>
+                                <td class="align-middle">
+                                    เสื้อพละ</td>
                                 <td class="align-middle">
                                     <div class="quantity mx-auto" style="width: 100px;">
                                         <input type="text"
@@ -197,128 +151,115 @@
                                 </td>
                                 <td class="align-middle">
                                     <div class="input-group quantity mx-auto" style="width: 100px;">
-                                        <!-- <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-minus">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div> -->
                                         <input type="text"
                                             class="form-control form-control-sm bg-secondary border-0 text-center"
                                             value="1">
-                                        <!-- <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-plus">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div> -->
                                     </div>
                                 </td>
-                                <td class="align-middle">กำลังจัดเตรียมสินค้า (pending)</td>
+                                <td class="align-middle">
+                                    <a href="../img/example-slip.jpg" download>
+                                        <div class="icon-download"></div>
+                                      </a>
+                                </td>
+                                <td class="align-middle">
+                                    <a class="align-middle" onclick="showPopup()">ดูเพิ่มเติม</a>
+                                    <div id="popup" class="popup">
+                                        <h2>Product Information</h2>
+                                        <form>
+                                          <label for="productId">Product ID:</label>
+                                          <input type="text" id="productId" name="productId" readonly>
+                                      
+                                          <label for="productName">Product Name:</label>
+                                          <input type="text" id="productName" name="productName" readonly>
+                                      
+                                          <label for="productPrice">Product Price:</label>
+                                          <input type="text" id="productPrice" name="productPrice" readonly>
+                                      
+                                          <label for="productQuality">Product Quality:</label>
+                                          <input type="number" id="productQuality" name="productQuality" readonly>
+                                      
+                                          <h2>Customer Information</h2>
+                                          <label for="customerID">Customer ID:</label>
+                                          <input type="text" id="customerID" name="customerID" readonly>
+                                      
+                                          <label for="customerName">Customer Name:</label>
+                                          <input type="text" id="customerName" name="customerName" readonly>
+                                      
+                                          <label for="customerAddress">Customer Address:</label>
+                                          <input type="text" id="customerAddress" name="customerAddress" readonly>
+                                      
+                                          <label for="customerPhone">Customer Phone:</label>
+                                          <input type="text" id="customerPhone" name="customerPhone" readonly>
+                                      
+                                          <label for="customerEmail">Customer Email:</label>
+                                          <input type="text" id="customerEmail" name="customerEmail" readonly>
+                                      
+                                          <button onclick="closePopup()">Close</button>
+                                        </form>
+                                      </div>
+                                      <script>
+                                        function showPopup() {
+                                          var popup = document.getElementById("popup");
+                                          popup.style.display = "flex";
+                                        
+                                          // Populate form fields with the provided information
+                                          document.getElementById("productId").value = "id001";
+                                          document.getElementById("productName").value = "laptop AX2";
+                                          document.getElementById("productPrice").value = "1,000.00";
+                                          document.getElementById("productQuality").value = 1;
+                                          document.getElementById("customerID").value = "019871";
+                                          document.getElementById("customerName").value = "Asadawut";
+                                          document.getElementById("customerAddress").value = "Thailand Bangkok";
+                                          document.getElementById("customerPhone").value = "0950640676";
+                                          document.getElementById("customerEmail").value = "6307012660127@email.kmuntb.ac.th";
+                                        }
+                                        
+                                        function closePopup() {
+                                          var popup = document.getElementById("popup");
+                                          popup.style.display = "none";
+                                        }
+                                        </script>
+                                        
+                                </td>
+                                <td class="align-middle">
+                                    <select>
+                                        <option value="option1">รอยืนยันการชำระเงิน</option>
+                                        <option value="option2">ยืนยันการชำระเงิน</option>
+                                        <option value="option3">กำลังจัดส่ง</option>
+                                        <option value="option3">จัดส่งสำเร็จ</option>
+                                        <option value="option3">ไม่ผ่านยืนยันการชำระเงิน</option>
+                                    </select>
+                                </td>
                                 <td class="align-middle">
                                     <a>
-                                        "เลข track"
+                                        <input type="text" name="" placeholder="เลขติดตามสินค้า">
                                     </a>
-                                    <!-- <img src="img/delivery_truck.png" alt="" style="width: 50px;"> -->
+                                </td>
+                                <td class="align-middle">
+                                    <a>
+                                        "ชื่อลูกค้า"
+                                    </a>
+                                    <a href="">
+                                        ดูเพิ่มเติม
+                                    </a>
+                                </td>
+                                <td class="align-middle">
+                                    <button class="align-middle icon-save"></button>
+                                    <button class="align-middle icon-check"></button>
+                                    <button class="align-middle icon-trash"></button>
                                 </td>
                             </tr>
                             <tr>
-                                <!-- <td class="align-middle"><img src="img/product-2.jpg" alt="" style="width: 50px;">
-                                    Product Name</td>
-                                <td class="align-middle">$150</td>
-                                <td class="align-middle">
-                                    <div class="input-group quantity mx-auto" style="width: 100px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-minus">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
-                                        <input type="text"
-                                            class="form-control form-control-sm bg-secondary border-0 text-center"
-                                            value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-plus">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="align-middle">$150</td>
-                                <td class="align-middle"><button class="btn btn-sm btn-danger"><i
-                                            class="fa fa-times"></i></button></td> -->
+
                             </tr>
                             <tr>
-                                <!-- <td class="align-middle"><img src="img/product-3.jpg" alt="" style="width: 50px;">
-                                    Product Name</td>
-                                <td class="align-middle">$150</td>
-                                <td class="align-middle">
-                                    <div class="input-group quantity mx-auto" style="width: 100px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-minus">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
-                                        <input type="text"
-                                            class="form-control form-control-sm bg-secondary border-0 text-center"
-                                            value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-plus">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="align-middle">$150</td>
-                                <td class="align-middle"><button class="btn btn-sm btn-danger"><i
-                                            class="fa fa-times"></i></button></td> -->
+
                             </tr>
                             <tr>
-                                <!-- <td class="align-middle"><img src="img/product-4.jpg" alt="" style="width: 50px;">
-                                    Product Name</td>
-                                <td class="align-middle">$150</td>
-                                <td class="align-middle">
-                                    <div class="input-group quantity mx-auto" style="width: 100px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-minus">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
-                                        <input type="text"
-                                            class="form-control form-control-sm bg-secondary border-0 text-center"
-                                            value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-plus">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="align-middle">$150</td>
-                                <td class="align-middle"><button class="btn btn-sm btn-danger"><i
-                                            class="fa fa-times"></i></button></td> -->
+
                             </tr>
                             <tr>
-                                <!-- <td class="align-middle"><img src="img/product-5.jpg" alt="" style="width: 50px;">
-                                    Product Name</td>
-                                <td class="align-middle">$150</td>
-                                <td class="align-middle">
-                                    <div class="input-group quantity mx-auto" style="width: 100px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-minus">
-                                                <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
-                                        <input type="text"
-                                            class="form-control form-control-sm bg-secondary border-0 text-center"
-                                            value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-primary btn-plus">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="align-middle">$150</td>
-                                <td class="align-middle"><button class="btn btn-sm btn-danger"><i
-                                            class="fa fa-times"></i></button></td> -->
+
                             </tr>
                         </tbody>
                     </table>
