@@ -1,117 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-/* Popup container */
-.popup {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* Updated background color */
-  overflow: auto;
-}
-
-.popup-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: auto;
-  width: 300px;
-  padding: 20px;
-  background-color: white; /* Updated background color */
-}
-
-/* Styling for form fields */
-input[type=text], input[type=number] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-button {
-  margin: 600px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-</style>
+    <title>Title of the document</title>
+    <style>
+    </style>
 </head>
+
 <body>
-
-<button onclick="showPopup()">Click to show information</button>
-
-<!-- Popup container -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <h2>Product Information</h2>
-    <form>
-      <label for="productId">Product ID:</label>
-      <input type="text" id="productId" name="productId" readonly>
-
-      <label for="productName">Product Name:</label>
-      <input type="text" id="productName" name="productName" readonly>
-
-      <label for="productPrice">Product Price:</label>
-      <input type="text" id="productPrice" name="productPrice" readonly>
-
-      <label for="productQuality">Product Quality:</label>
-      <input type="number" id="productQuality" name="productQuality" readonly>
-
-      <h2>Customer Information</h2>
-      <label for="customerID">Customer ID:</label>
-      <input type="text" id="customerID" name="customerID" readonly>
-
-      <label for="customerName">Customer Name:</label>
-      <input type="text" id="customerName" name="customerName" readonly>
-
-      <label for="customerAddress">Customer Address:</label>
-      <input type="text" id="customerAddress" name="customerAddress" readonly>
-
-      <label for="customerPhone">Customer Phone:</label>
-      <input type="text" id="customerPhone" name="customerPhone" readonly>
-
-      <label for="customerEmail">Customer Email:</label>
-      <input type="text" id="customerEmail" name="customerEmail" readonly>
-
-      <button onclick="closePopup()">Close</button>
-    </form>
-  </div>
-</div>
-
-<script>
-function showPopup() {
-  var popup = document.getElementById("popup");
-  popup.style.display = "flex";
-
-  // Populate form fields with the provided information
-  document.getElementById("productId").value = "id001";
-  document.getElementById("productName").value = "laptop AX2";
-  document.getElementById("productPrice").value = "1,000.00";
-  document.getElementById("productQuality").value = 1;
-  document.getElementById("customerID").value = "019871";
-  document.getElementById("customerName").value = "Asadawut";
-  document.getElementById("customerAddress").value = "Thailand Bangkok";
-  document.getElementById("customerPhone").value = "0950640676";
-  document.getElementById("customerEmail").value = "6307012660127@email.kmuntb.ac.th";
-}
-
-function closePopup() {
-  var popup = document.getElementById("popup");
-  popup.style.display = "none";
-}
-</script>
-
+    <p>
+        <button class="a4f-button" data-modal="modalTwo">Send a Complaint Form</button>
+    </p>
+    <div id="modalTwo" class="a4f-modal">
+        <div class="a4f-modal-content">
+            <div class="contact-form">
+                <span class="close">&times;</span>
+                <form action="/">
+                    <h2>Complaint form</h2>
+                    <div>
+                        <input type="text" name="name" placeholder="Product ID" id="productId" value="id001" readonly />
+                        <input type="text" name="name" placeholder="Product Name" id="productName" value="laptop AX2"
+                            readonly />
+                        <input type="text" name="name" placeholder="Product Price" id="productPrice" value="1,000.00"
+                            readonly />
+                        <input type="text" name="name" placeholder="Product Quality" id="productQuality" value="1"
+                            readonly />
+                        <input type="text" name="name" placeholder="Customer ID" id="customerID" value="019871"
+                            readonly />
+                        <input type="text" name="name" placeholder="Customer Name" id="customerName" value="Asadawut"
+                            readonly />
+                        <input type="text" name="name" placeholder="Customer Address" id="customerAddress"
+                            value="Thailand Bangkok" readonly />
+                        <input type="text" name="name" placeholder="Customer Phone" id="customerPhone"
+                            value="0950640676" readonly />
+                        <input type="text" name="name" placeholder="Customer Email" id="customerEmail"
+                            value="6307012660127@email.kmuntb.ac.th" readonly />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        let modalBtns = [...document.querySelectorAll(".a4f-button")];
+        modalBtns.forEach(function (btn) {
+            btn.onclick = function () {
+                let modal = btn.getAttribute("data-modal");
+                document.getElementById(modal).style.display = "block";
+            };
+        });
+        let closeBtns = [...document.querySelectorAll(".a4f-modal-content .close")];
+        closeBtns.forEach(function (btn) {
+            btn.onclick = function () {
+                let modal = btn.closest(".a4f-modal");
+                modal.style.display = "none";
+            };
+        });
+        window.onclick = function (event) {
+            if (event.target.className === "a4f-modal") {
+                event.target.style.display = "none";
+            }
+        };
+    </script>
 </body>
+
 </html>
