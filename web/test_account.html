@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <script>
+    function login() {
+      var id = document.getElementById("id").value;
+      var password = document.getElementById("password").value;
+
+      // Read the JSON file
+      fetch('accounts.json')
+        .then(response => response.json())
+        .then(data => {
+          // Find the account matching the provided credentials
+          var account = data.accounts.find(a => a.id === id && a.password === password);
+
+          if (account) {
+            // Redirect the user based on their access level
+            if (account.access === "status") {
+              window.location.href = "/web/status/editStatus.html";
+            } else if (account.access === "history") {
+              window.location.href = "/web/status/customerOrder.html";
+            } else if (account.access === "product") {
+              window.location.href = "/web/product/productList.html";
+            } else if (account.access === "all") {
+              // Redirect to a page that shows all options
+              // Replace "all.html" with the appropriate page
+              window.location.href = "/web/all.html";
+            }
+          } else {
+            // Show an error message for invalid credentials
+            document.getElementById("error").textContent = "Invalid username or password.";
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Login</h1>
+  <div>
+    <label for="id">Username:</label>
+    <input type="text" id="id" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+  </div>
+  <div>
+    <button onclick="login()">Login</button>
+  </div>
+  <p id="error"></p>
+</body>
+</html>
