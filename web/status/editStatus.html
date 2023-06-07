@@ -89,11 +89,11 @@
                                 <a href="../status.html" class="nav-item nav-link nav-th">สถานะคำสั่งซื้อ</a>
                                 <a class="nav-item nav-link nav-th">|</a>
                                 <a href="editStatus.html"
-                                    class="nav-item nav-link nav-th active">แก้ไขสถานะคำสั่งซื้อ</a>
+                                    class="nav-item nav-link nav-th active">จัดการสถานะคำสั่งซื้อ</a>
                                 <a href="customerOrder.html"
                                     class="nav-item nav-link nav-th">ประวัติการซื้อสำเร็จ</a>
                                 <a href="../product/productList.html"
-                                    class="nav-item nav-link nav-th">แก้รายการสินค้า</a>
+                                    class="nav-item nav-link nav-th">จัดการรายการสินค้า</a>
                             </div>
                             <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                                 <a href="/account/login" class="btn px-0 ml-3">
@@ -167,25 +167,54 @@
                                         <div class="a4f-modal-content">
                                             <div class="contact-form">
                                                 <span class="close">&times;</span>
-                                                <form action="/">
-                                                    <h2 style="font-family: Arial, sans-serif; color: #ff4c4c;">Order Form</h2>
+                                                <form action="">
+                                                    <h2>คำสั่งซื้อ</h2>
                                                     <div style="display: flex; flex-direction: column;">
-                                                      <label style="font-family: Arial, sans-serif; color: #555; margin-bottom: 5px;" for="productId">Product ID</label>
-                                                      <input style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px;" type="text" name="name" placeholder="Enter Product ID" id="productId" value="id001" readonly />
-                                                      
-                                                      <label style="font-family: Arial, sans-serif; color: #555; margin-bottom: 5px;" for="productName">Product Name</label>
-                                                      <input style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px;" type="text" name="name" placeholder="Enter Product Name" id="productName" value="กางเกงพละ" readonly />
-                                                      
-                                                      <label style="font-family: Arial, sans-serif; color: #555; margin-bottom: 5px;" for="productPrice">Price</label>
-                                                      <input style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px;" type="text" name="name" placeholder="Enter Product Price" id="productPrice" value="1,000.00 บาท" readonly />
-                                                      
-                                                      <label style="font-family: Arial, sans-serif; color: #555; margin-bottom: 5px;" for="productQuality">Quantity</label>
-                                                      <input style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px;" type="text" name="name" placeholder="Enter Product Quantity" id="productQuality" value="1" readonly />
-                                                      
-                                                      <label style="font-family: Arial, sans-serif; color: #555; margin-bottom: 5px;" for="productSize">Size</label>
-                                                      <input style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px;" type="text" name="name" placeholder="Enter Product Size" id="productSize" value="M" readonly />
-                                                      
-                                                      <button style="padding: 10px 20px; background-color: #ff4c4c; color: #fff; border: none; border-radius: 4px; font-family: Arial, sans-serif; cursor: pointer;">Place Order</button>
+                                                      <label style="text-align: left;" for="productId">Product ID</label>
+                                                      <input style="padding: 5px; border: none; margin-bottom: 10px; margin-right: 10px;" 
+                                                      type="text" 
+                                                      name="name" 
+                                                      placeholder="Enter Product ID" 
+                                                      id="productId" 
+                                                      value="id001" 
+                                                      readonly />
+                                                  
+                                                      <label style="text-align: left;" for="productName">Product Name</label>
+                                                      <input style="padding: 5px; border: none; border-radius: 4px; margin-bottom: 10px;" 
+                                                      type="text" 
+                                                      name="name" 
+                                                      placeholder="Enter Product Name" 
+                                                      id="productName" 
+                                                      value="กางเกงพละ" 
+                                                      readonly />
+                                                  
+                                                      <label style="text-align: left;" for="productPrice">Price</label>
+                                                      <input style="padding: 5px; border: none; border-radius: 4px; margin-bottom: 10px;" 
+                                                      type="text" 
+                                                      name="name" 
+                                                      placeholder="Enter Product Price" 
+                                                      id="productPrice" 
+                                                      value="1,000.00 บาท" 
+                                                      readonly />
+                                                  
+                                                      <label style="text-align: left;" for="productQuality">Quantity</label>
+                                                      <input style="padding: 5px; border: none; border-radius: 4px; margin-bottom: 10px;" 
+                                                      type="text" 
+                                                      name="name" 
+                                                      placeholder="Enter Product Quantity" 
+                                                      id="productQuality" 
+                                                      value="1" 
+                                                      readonly />
+                                                  
+                                                      <label style="text-align: left;" for="productSize">Size</label>
+                                                      <input style="padding: 5px; border: none; border-radius: 4px; margin-bottom: 20px;" 
+                                                      type="text" name="name" 
+                                                      placeholder="Enter Product Size" 
+                                                      id="productSize" 
+                                                      value="M" 
+                                                      readonly />
+                                                  
+                                                      <button style="padding: 10px 20px; background-color: #000000; color: #fff; border: none; border-radius: 4px; font-family: Arial, sans-serif; cursor: pointer;">ปิด</button>
                                                     </div>
                                                   </form>
                                                   

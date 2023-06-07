@@ -89,11 +89,11 @@
                                 <a href="../status.html" class="nav-item nav-link nav-th">สถานะคำสั่งซื้อ</a>
                                 <a class="nav-item nav-link nav-th">|</a>
                                 <a href="../status/editStatus.html"
-                                    class="nav-item nav-link nav-th">แก้ไขสถานะคำสั่งซื้อ</a>
+                                    class="nav-item nav-link nav-th">จัดการไขสถานะคำสั่งซื้อ</a>
                                 <a href="../status/customerOrder.html"
                                     class="nav-item nav-link nav-th">ประวัติการซื้อสำเร็จ</a>
                                 <a href="../product/productList.html"
-                                    class="nav-item nav-link nav-th active">แก้รายการสินค้า</a>
+                                    class="nav-item nav-link nav-th active">จัดการรายการสินค้า</a>
                             </div>
                             <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                                 <a href="../account/login.html" class="btn px-0 ml-3">
@@ -120,7 +120,16 @@
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner bg-light">
                         <div class="carousel-item active">
-                            <img class="w-100 h-100" src="../img/Empty.png" alt="Image">
+                            <!-- <img class="upload" src="../img/upload.png" alt="Image"> -->
+                            <div class="center-form">
+                                <div class="container-upload">
+                                    <form action="" enctype="multipart/form-data">
+                                        <!-- <input type="file" id="imageUpload" name="imageUpload" accept="image/*"> -->
+                                        <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                                        <div id="fileStatus"></div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
@@ -137,10 +146,10 @@
                     <form>
                         <label for="product-name">Product Name:</label><br>
                         <input type="text" id="product-name" name="product-name" required><br>
-                    
+
                         <label for="product-price">Price:</label><br>
                         <input type="text" id="product-price" name="product-price" oninput="formatPrice()" required><br>
-                      </form>
+                    </form>
                     <p class="mb-4">
                         <textarea rows="5" cols="70"></textarea>
                     </p>
@@ -150,54 +159,33 @@
                         <form>
 
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="size-1" 
-                                    name="size[]"
+                                <input type="checkbox" class="custom-control-input" id="size-1" name="size[]"
                                     value="XS">
-                                <label class="custom-control-label" 
-                                    for="size-1">XS</label>
+                                <label class="custom-control-label" for="size-1">XS</label>
                             </div>
 
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="size-2" 
-                                    name="size[]" 
-                                    value="S">
-                                <label class="custom-control-label" 
-                                    for="size-2">S</label>
+                                <input type="checkbox" class="custom-control-input" id="size-2" name="size[]" value="S">
+                                <label class="custom-control-label" for="size-2">S</label>
                             </div>
 
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="size-3" 
-                                    name="size[]" 
-                                    value="M">
-                                <label class="custom-control-label" 
-                                    for="size-3">M</label>
+                                <input type="checkbox" class="custom-control-input" id="size-3" name="size[]" value="M">
+                                <label class="custom-control-label" for="size-3">M</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="size-4" 
-                                    name="size[]" 
-                                    value="L">
-                                <label class="custom-control-label" 
-                                    for="size-4">L</label>
+                                <input type="checkbox" class="custom-control-input" id="size-4" name="size[]" value="L">
+                                <label class="custom-control-label" for="size-4">L</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="size-5" 
-                                    name="size[]" 
+                                <input type="checkbox" class="custom-control-input" id="size-5" name="size[]"
                                     value="XL">
-                                <label class="custom-control-label" 
-                                    for="size-5">XL</label>
+                                <label class="custom-control-label" for="size-5">XL</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="size-6" 
-                                    name="size[]" 
+                                <input type="checkbox" class="custom-control-input" id="size-6" name="size[]"
                                     value="XXL">
-                                <label class="custom-control-label" 
-                                    for="size-6">XXL</label>
+                                <label class="custom-control-label" for="size-6">XXL</label>
                             </div>
 
                         </form>
@@ -207,44 +195,29 @@
                         <strong class="text-dark mr-3">สี:</strong>
                         <form>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="color-1" 
-                                    name="color[]"
+                                <input type="checkbox" class="custom-control-input" id="color-1" name="color[]"
                                     value="color-1">
-                                <label class="custom-control-label" 
-                                    for="color-1">ดำ</label>
+                                <label class="custom-control-label" for="color-1">ดำ</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="color-2" 
-                                    name="color[]"
+                                <input type="checkbox" class="custom-control-input" id="color-2" name="color[]"
                                     value="color-2">
-                                <label class="custom-control-label" 
-                                    for="color-2">แดง</label>
+                                <label class="custom-control-label" for="color-2">แดง</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="color-3" 
-                                    name="color[]"
+                                <input type="checkbox" class="custom-control-input" id="color-3" name="color[]"
                                     value="color-3">
-                                <label class="custom-control-label" 
-                                    for="color-3">ขาว</label>
+                                <label class="custom-control-label" for="color-3">ขาว</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="color-4" 
-                                    name="color[]"
+                                <input type="checkbox" class="custom-control-input" id="color-4" name="color[]"
                                     value="color-4">
-                                <label class="custom-control-label" 
-                                    for="color-4">เขียว</label>
+                                <label class="custom-control-label" for="color-4">เขียว</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="color-5" 
-                                    name="color[]"
+                                <input type="checkbox" class="custom-control-input" id="color-5" name="color[]"
                                     value="color-5">
-                                <label class="custom-control-label" 
-                                    for="color-5">ส้ม</label>
+                                <label class="custom-control-label" for="color-5">ส้ม</label>
                             </div>
                         </form>
                     </div>
@@ -253,44 +226,32 @@
                         <strong class="text-dark mr-3">ขนาด/ความยาว:</strong>
                         <form>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="cm-1" 
-                                    name="cm[]"
-                                    value="cm-1">
-                                <label class="custom-control-label" 
-                                    for="cm-1">10cm</label>
+                                <input type="checkbox" class="custom-control-input" id="cm-1" name="cm[]" value="cm-1">
+                                <label class="custom-control-label" for="cm-1">10cm</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="cm-2" 
-                                    name="cm[]"
-                                    value="cm-2">
-                                <label class="custom-control-label" 
-                                    for="cm-2">20cm</label>
+                                <input type="checkbox" class="custom-control-input" id="cm-2" name="cm[]" value="cm-2">
+                                <label class="custom-control-label" for="cm-2">20cm</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" 
-                                    id="cm-3" 
-                                    name="cm[]"
-                                    value="cm-3">
-                                <label class="custom-control-label" 
-                                    for="cm-3">30cm</label>
+                                <input type="checkbox" class="custom-control-input" id="cm-3" name="cm[]" value="cm-3">
+                                <label class="custom-control-label" for="cm-3">30cm</label>
                             </div>
                         </form>
                     </div>
-                
+
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <div class="input-group quantity mr-3" style="width: 130px;">
-                            <input class="form-control bg-secondary border-0 text-center" 
-                                placeholder="จำนวน" type="number" id="myInput" min="0" max="999" oninput="limitInput()">
+                            <input class="form-control bg-secondary border-0 text-center" placeholder="จำนวน"
+                                type="number" id="myInput" min="0" max="999" oninput="limitInput()">
                         </div>
                         <script>
-                          function limitInput() {
-                            var input = document.getElementById("myInput");
-                            if (parseInt(input.value) > 999) {
-                              input.value = 999;
+                            function limitInput() {
+                                var input = document.getElementById("myInput");
+                                if (parseInt(input.value) > 999) {
+                                    input.value = 999;
+                                }
                             }
-                          }
                         </script>
 
                         <button class="btn btn-primary px-3 "><i class="fa mr-1"></i>ยืนยันเพิ่มสินค้า</button>

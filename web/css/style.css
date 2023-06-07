@@ -4017,14 +4017,14 @@ form {
 
 .a4f-modal-content form {
   padding: 25px;
-  margin: 25px;
+  margin: 70px;
   box-shadow: 0 2px 5px #f5f5f5;
   background: #eee;
 }
 
 .a4f-modal-content input,
 .a4f-modal-content textarea {
-  width: 90%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #1c87c9;
@@ -4137,6 +4137,45 @@ form {
   display: inline-block;
   background-image: url(/web/img/upload.png);
   background-size: cover;
+}
+
+.container-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+  width: 500px;
+  border: none;
+  border-radius: 4px;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.upload-text {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .custom-control-input {
