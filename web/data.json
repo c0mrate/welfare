@@ -3,16 +3,18 @@
   "OrderDate": "1997-08-25",
   "ShipAddress": "Obere Str. 57",
   "ShipCity": "Berlin",
-  "ShipRegion": "Thailand",
+  "ShipRegion": "",
   "ShipPostalCode": "12209",
   "ShipCountry": "Germany",
   "ShipName": "Alfreds Futterkiste",
   "ShipVia": "visa",
-  "orderID": "A001",
-  "ProductID": "P1234",
-  "ProductName": "เสื้อ",
-  "ProductQuality": 2,
-  "ProductSize": "XL",
-  "ProductColor": "แดง",
-  "Total": 992.38
+  "OrderID":"A01",
+  "CustomerOrderList": {
+    "ProductID": "P1234",
+    "ProductName": "เสื้อ",
+    "ProductQuality": 2,
+    "ProductSize": "XL",
+    "ProductColor": "แดง",
+    "Total": 992.38
+  }
 }
