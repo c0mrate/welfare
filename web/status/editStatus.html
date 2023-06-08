@@ -17,56 +17,9 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid">
-        <div class="row bg-secondary py-1 px-xl-5">
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="https://www.kmutnb.ac.th/">KING MONGKUT'S UNIVERSITY OF TECHNOLOGY
-                        NORTH BANGKOK</a>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light" onclick="goBack()">Exit</button>
-                    </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-light">THB</button>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle"
-                            data-toggle="dropdown">TH</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">ENG</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle"
-                            style="padding-bottom: 2px;">0</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-dark bg-primary px-2">KMUTNB</span>
-                    <span class="h1 text-uppercase text-primary bg-dark px-2 ml-n1">Store</span>
-                </a>
-            </div>
-            <div class="col-lg-4 col-6 text-left">
-            </div>
-            <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">ติดต่อ</p>
-                <h5 class="m-0">+012 345 6789</h5>
-            </div>
-        </div>
+    <div class="content-landing-bar nav-th">
+        <a>ศูนย์ส่งเสริมสวัสดิการและสิ่งจูงใจ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</a>
     </div>
-    <!-- Topbar End -->
 
     <!-- Navbar Start -->
     <div class="container-fluid bg-dark mb-30">
@@ -82,7 +35,7 @@
                     </button>
                     <div class="con-a-center">
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav mr-auto py-0">
+                            <div class="navbar-nav mr-auto py-0 space">
                                 <a href="../store.html" class="nav-item nav-link nav-th">หน้าหลัก</a>
                                 <a href="../product.html" class="nav-item nav-link nav-th">สินค้าทั้งหมด</a>
                                 <a href="../detail.html" class="nav-item nav-link nav-th">รายละเอียดสินค้า</a>
@@ -165,59 +118,9 @@
                                     <button class="a4f-button" data-modal="modalTwo">ดูเพิ่มเติม</button>
                                     <div id="modalTwo" class="a4f-modal">
                                         <div class="a4f-modal-content">
-                                            <div class="contact-form">
+                                            <div class="contact-form recipe-container">
                                                 <span class="close">&times;</span>
-                                                <form action="">
-                                                    <h2>คำสั่งซื้อ</h2>
-                                                    <div style="display: flex; flex-direction: column;">
-                                                      <label style="text-align: left;" for="productId">Product ID</label>
-                                                      <input style="padding: 5px; border: none; margin-bottom: 10px; margin-right: 10px;" 
-                                                      type="text" 
-                                                      name="name" 
-                                                      placeholder="Enter Product ID" 
-                                                      id="productId" 
-                                                      value="id001" 
-                                                      readonly />
-                                                  
-                                                      <label style="text-align: left;" for="productName">Product Name</label>
-                                                      <input style="padding: 5px; border: none; border-radius: 4px; margin-bottom: 10px;" 
-                                                      type="text" 
-                                                      name="name" 
-                                                      placeholder="Enter Product Name" 
-                                                      id="productName" 
-                                                      value="กางเกงพละ" 
-                                                      readonly />
-                                                  
-                                                      <label style="text-align: left;" for="productPrice">Price</label>
-                                                      <input style="padding: 5px; border: none; border-radius: 4px; margin-bottom: 10px;" 
-                                                      type="text" 
-                                                      name="name" 
-                                                      placeholder="Enter Product Price" 
-                                                      id="productPrice" 
-                                                      value="1,000.00 บาท" 
-                                                      readonly />
-                                                  
-                                                      <label style="text-align: left;" for="productQuality">Quantity</label>
-                                                      <input style="padding: 5px; border: none; border-radius: 4px; margin-bottom: 10px;" 
-                                                      type="text" 
-                                                      name="name" 
-                                                      placeholder="Enter Product Quantity" 
-                                                      id="productQuality" 
-                                                      value="1" 
-                                                      readonly />
-                                                  
-                                                      <label style="text-align: left;" for="productSize">Size</label>
-                                                      <input style="padding: 5px; border: none; border-radius: 4px; margin-bottom: 20px;" 
-                                                      type="text" name="name" 
-                                                      placeholder="Enter Product Size" 
-                                                      id="productSize" 
-                                                      value="M" 
-                                                      readonly />
-                                                  
-                                                      <button style="padding: 10px 20px; background-color: #000000; color: #fff; border: none; border-radius: 4px; font-family: Arial, sans-serif; cursor: pointer;">ปิด</button>
-                                                    </div>
-                                                  </form>
-                                                  
+                                                
                                             </div>
                                         </div>
                                     </div>

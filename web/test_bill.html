@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Order Bill and Recipe</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link href="source/img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .font-th {
+            font-size: 13px;
+        }
+
+        .section {
+            margin-right: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .section-header {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            flex-basis: 100%;
+        }
+
+        .field-label {
+            font-weight: bold;
+            padding: 4px;
+            width: 120px;
+        }
+
+        .data-value {
+            padding: 4px;
+            background-color: #ffffff;
+            border-radius: 4px;
+        }
+
+        
+        .right-align-title {
+            text-align: right;
+            margin-bottom: 5px;
+        }
+
+        .right-align-total {
+            text-align: right;
+            margin-top: 50px;
+        }
+
+        .data-only {
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container font-th">
+        <div class="right-align-title">
+            <h2 class="section-header">Order Information</h2>
+            <div>
+                <div >Order Date</div>
+                <div id="orderDate" class="data-value data-only"></div>
+            </div>
+            <div>
+                <div >Customer</div>
+                <div id="customerID" class="data-value data-only"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="section">
+            <h2 class="section-header">Additional Information</h2>
+
+            <div>Ship Name</div>
+            <div id="shipName" class="data-value data-only"></div>
+
+            <div>Ship Via</div>
+            <div id="shipVia"></div>
+        </div>
+        <hr>
+        <div class="section">
+            <h2 class="section-header">Shipping Details</h2>
+
+            <div>Name </div>
+            <div id="shipName"></div>
+
+            <div>Address </div>
+            <div id="shipAddress"></div>
+
+            <div>City </div>
+            <div id="shipCity"></div>
+
+            <div>Region </div>
+            <div id="shipRegion"></div>
+
+            <div>Postal Code </div>
+            <div id="shipPostalCode"></div>
+
+            <div>Ship Country </div>
+            <div id="shipCountry"></div>
+
+
+
+        </div>
+        <hr>
+        <div class="section">
+            <h2 class="section-header">Order</h2>
+            <div id="productID"></div>
+            <div id="productName"></div>
+            <div id="productSize"></div>
+            <div>จำนวน</div>
+            <div id="productQuality"></div>
+            <div>ตัว</div>
+            <div>สี</div>
+            <div id="productColor"></div>
+        </div>
+        <div class="right-align-total">
+            <div>Total</div>
+            <div id="total"></div>
+        </div>
+        <hr>
+
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchJSON();
+        });
+
+        function fetchJSON() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => populateHTML(data))
+                .catch(error => {
+                    console.error('Error:', error);
+                    createJSON();
+                });
+        }
+
+        function populateHTML(data) {
+            document.getElementById('customerID').textContent = data.CustomerID;
+            document.getElementById('orderDate').textContent = data.OrderDate;
+            document.getElementById('shipAddress').textContent = data.ShipAddress;
+            document.getElementById('shipCity').textContent = data.ShipCity;
+            document.getElementById('shipRegion').textContent = data.ShipRegion;
+            document.getElementById('shipPostalCode').textContent = data.ShipPostalCode;
+            document.getElementById('shipCountry').textContent = data.ShipCountry;
+            document.getElementById('shipName').textContent = data.ShipName;
+            document.getElementById('shipVia').textContent = data.ShipVia;
+            document.getElementById('productID').textContent = data.ProductID;
+            document.getElementById('productName').textContent = data.ProductName;
+            document.getElementById('productQuality').textContent = data.ProductQuality;
+            document.getElementById('productSize').textContent = data.ProductSize;
+            document.getElementById('productColor').textContent = data.ProductColor;
+            document.getElementById('total').textContent = data.Total;
+        }
+
+        function createJSON() {
+            const defaultData = {
+                CustomerID: 'N/A',
+                OrderDate: 'N/A',
+                ShippedDate: 'N/A',
+                ShipAddress: 'N/A',
+                ShipCity: 'N/A',
+                ShipRegion: 'N/A',
+                ShipPostalCode: 'N/A',
+                ShipCountry: 'N/A',
+                ShipName: 'N/A',
+                ShipVia: 'N/A',
+                ProductID: 'N/A',
+                ProductName: 'N/A',
+                ProductQuality: 'N/A',
+                ProductSize: 'N/A',
+                ProductColor: 'N/A',
+                Total: 'N/A'
+            };
+
+            populateHTML(defaultData);
+
+            const jsonData = JSON.stringify(defaultData, null, 2);
+            const blob = new Blob([jsonData], { type: 'application/json' });
+
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'data.json';
+            link.click();
+        }
+    </script>
+</body>
+</html>
