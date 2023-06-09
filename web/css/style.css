@@ -75,7 +75,7 @@ body {
   background-color: #F5F5F5;
 }
 
-.body_landing {
+.font_increase_size {
   font-size: 1.1rem;
 }
 
@@ -7327,14 +7327,6 @@ button.bg-danger:focus {
   background-color: #3b5998;
 }
 
-/* .social-icons-ig a:hover {
-  background-color: #06c755;
-} */
-
-/* .social-icons-ig a {
-  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-} */
-
 .social-icons-ig a:hover {
   background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
 }
@@ -7342,7 +7334,7 @@ button.bg-danger:focus {
 .social-icons svg {
   width: 26px;
   height: 26px;
-  fill: #000; /* Change the color as per your requirement */
+  fill: #000;
 }
 
 
