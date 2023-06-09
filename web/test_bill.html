@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Order Bill and Recipe</title>
@@ -57,19 +58,47 @@
             border-radius: 4px;
         }
 
-        
         .right-align-title {
             text-align: right;
             margin-bottom: 5px;
         }
 
-        .right-align-total {
-            text-align: right;
-            margin-top: 50px;
+        .bottom_ {
+            margin-top: 10px;
         }
 
+        .right-align-total {
+            text-align: right;
+        }
+
+        .right-align-shipvia {
+            text-align: left;
+        }
+        
         .data-only {
             color: #000000;
+        }
+
+        .product-space {
+            margin-bottom: 0px;
+        }
+
+        .product-info span {
+            margin-right: 40px;
+        }
+
+        .product-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .product-price {
+            margin-right: 0px;
+            margin-left: auto;
+            text-align: left;
+        }
+        .order-section {
+            margin-left: 300px;
         }
     </style>
 </head>
@@ -79,68 +108,57 @@
         <div class="right-align-title">
             <h2 class="section-header">Order Information</h2>
             <div>
-                <div >Order Date</div>
-                <div id="orderDate" class="data-value data-only"></div>
+                <div>Order Number:<span id="orderID" class="data-value data-only"></span></div>
             </div>
             <div>
-                <div >Customer</div>
-                <div id="customerID" class="data-value data-only"></div>
+                <div>Order Date:<span id="orderDate" class="data-value data-only"></span></div>
+            </div>
+            <div>
+                <div>Customer ID:<span id="customerID" class="data-value data-only"></span></div>
             </div>
         </div>
         <hr>
         <div class="section">
-            <h2 class="section-header">Additional Information</h2>
-
-            <div>Ship Name</div>
-            <div id="shipName" class="data-value data-only"></div>
-
-            <div>Ship Via</div>
-            <div id="shipVia"></div>
+            <h2 class="section-header">Name</h2>
+            <div>ชื่อผู้ทำรายการ</div>
+            <div id="username" class="data-value data-only"></div>
+            <!-- <div>Ship Via</div>
+            <div id="shipVia"></div> -->
         </div>
         <hr>
         <div class="section">
-            <h2 class="section-header">Shipping Details</h2>
-
-            <div>ชื่อ </div>
+            <h2 class="section-header">Address</h2>
+            <div>ชื่อ</div>
             <div id="shipName"></div>
-
-            <div>ที่อยู่ </div>
+            <div>ที่อยู่</div>
             <div id="shipAddress"></div>
-
-            <div>จังหวัด </div>
+            <div>จังหวัด</div>
             <div id="shipCity"></div>
-
-            <div>เขต </div>
+            <div>เขต</div>
             <div id="shipRegion"></div>
-
-            <div>รหัสไปรษณีย์ </div>
+            <div>รหัสไปรษณีย์</div>
             <div id="shipPostalCode"></div>
-
-            <div>ประเทศ </div>
+            <div>ประเทศ</div>
             <div id="shipCountry"></div>
-
-
-
         </div>
         <hr>
         <div class="section">
             <h2 class="section-header">Order</h2>
-            <div id="productID"></div>
-            <div id="productName"></div>
-            <div id="productSize"></div>
-            <div>จำนวน</div>
-            <div id="productQuality"></div>
-            <div>ตัว</div>
-            <div>สี</div>
-            <div id="productColor"></div>
+            <div class="order-section">
+                <div id="productsContainer"></div>
+            </div>
         </div>
-        <div class="right-align-total">
-            <div>Total</div>
-            <div id="total"></div>
+        <div class="bottom_">
+            <div class="right-align-shipvia">
+                <div>ชำระค่าสินค้าด้วย</div>
+                <div id="shipVia"></div>
+            </div>
+            <div class="right-align-total">
+                <div>Total</div>
+                <div id="total"></div>
+            </div>
         </div>
         <hr>
-
-
     </div>
 
     <script>
@@ -159,7 +177,9 @@
         }
 
         function populateHTML(data) {
+            document.getElementById('orderID').textContent = data.OrderID;
             document.getElementById('customerID').textContent = data.CustomerID;
+            document.getElementById('username').textContent = data.Username;
             document.getElementById('orderDate').textContent = data.OrderDate;
             document.getElementById('shipAddress').textContent = data.ShipAddress;
             document.getElementById('shipCity').textContent = data.ShipCity;
@@ -168,17 +188,40 @@
             document.getElementById('shipCountry').textContent = data.ShipCountry;
             document.getElementById('shipName').textContent = data.ShipName;
             document.getElementById('shipVia').textContent = data.ShipVia;
-            document.getElementById('productID').textContent = data.ProductID;
-            document.getElementById('productName').textContent = data.ProductName;
-            document.getElementById('productQuality').textContent = data.ProductQuality;
-            document.getElementById('productSize').textContent = data.ProductSize;
-            document.getElementById('productColor').textContent = data.ProductColor;
-            document.getElementById('total').textContent = data.Total;
+
+            const productsContainer = document.getElementById('productsContainer');
+            productsContainer.innerHTML = ''; // Clear previous product list
+
+            let total = 0; // Initialize total price
+
+            data.Products.forEach((product, index) => {
+                const productRow = document.createElement('div');
+                productRow.className = 'product-row';
+
+                const productInfo = document.createElement('div');
+                productInfo.className = 'product-info';
+                productInfo.innerHTML = `${index + 1}. ${product.ProductID} ${product.ProductName}<br><span style="margin-left: 250px">${product.ProductSize} จำนวน ${product.ProductQuality} สี ${product.ProductColor}</span><hr>`;
+                productRow.appendChild(productInfo);
+
+                productRow.appendChild(productInfo);
+
+                const productPrice = document.createElement('div');
+                productPrice.className = 'product-price';
+                productPrice.textContent = product.ProductPrice.toFixed(2) + ' บาท';
+                productRow.appendChild(productPrice);
+
+                total += product.ProductQuality * product.ProductPrice; // Calculate product price
+
+                productsContainer.appendChild(productRow);
+            });
+            document.getElementById('total').textContent = total.toFixed(2); // Display total price
         }
 
         function createJSON() {
             const defaultData = {
+                OrderID: 'none',
                 CustomerID: 'N/A',
+                Username: 'Unknown',
                 OrderDate: 'N/A',
                 ShippedDate: 'N/A',
                 ShipAddress: 'N/A',
@@ -193,6 +236,7 @@
                 ProductQuality: 'N/A',
                 ProductSize: 'N/A',
                 ProductColor: 'N/A',
+                ProductPrice: 'N/A',
                 Total: 'N/A'
             };
 
@@ -208,4 +252,5 @@
         }
     </script>
 </body>
+
 </html>

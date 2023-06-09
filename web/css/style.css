@@ -7216,7 +7216,6 @@ button.bg-danger:focus {
   position: relative;
   padding: 5px 30px;
   text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 .underline_text_::after {

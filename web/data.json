@@ -1,6 +1,8 @@
 {
   "CustomerID": "ALFKI",
+  "Username": "admin1",
   "OrderDate": "1997-08-25",
+  "OrderTime": "none",
   "ShipAddress": "Obere Str. 57",
   "ShipCity": "Berlin",
   "ShipRegion": "",
@@ -8,13 +10,32 @@
   "ShipCountry": "Germany",
   "ShipName": "Alfreds Futterkiste",
   "ShipVia": "visa",
-  "OrderID":"A01",
-  "CustomerOrderList": {
-    "ProductID": "P1234",
-    "ProductName": "เสื้อ",
-    "ProductQuality": 2,
-    "ProductSize": "XL",
-    "ProductColor": "แดง",
-    "Total": 992.38
-  }
+  "OrderID": "A01",
+  "Products": [
+    {
+      "ProductID": "P1235",
+      "ProductName": "เสื้อ",
+      "ProductQuality": 1,
+      "ProductSize": "XL",
+      "ProductColor": "แดง",
+      "ProductPrice": 100.00
+    },
+    {
+      "ProductID": "P1235",
+      "ProductName": "เสื้อ",
+      "ProductQuality": 1,
+      "ProductSize": "S",
+      "ProductColor": "แดง",
+      "ProductPrice": 150.00
+    },
+    {
+      "ProductID": "P1234",
+      "ProductName": "กางเกงพละ",
+      "ProductQuality": 1,
+      "ProductSize": "S",
+      "ProductColor": "แดง",
+      "ProductPrice": 120.00
+    }
+    
+  ]
 }
