@@ -1,47 +1,40 @@
-const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
-const path = require('path');
 
-const server = http.createServer((req, res) => {
-  // Extract the URL and file extension
-  const url = req.url === '/' ? '/index.html' : req.url;
-  const ext = path.extname(url).substring(1);
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 
-  // Set the content type based on the file extension
-  let contentType = 'text/html';
-  switch (ext) {
-    case 'css':
-      contentType = 'text/css';
-      break;
-    case 'js':
-      contentType = 'text/javascript';
-      break;
-    case 'ico':
-      contentType = 'image/x-icon';
-      break;
+// Register route
+app.post('/register', (req, res) => {
+  const { name, email, password } = req.body;
+
+  // Create an object with the user data
+  const userData = {
+    name,
+    email,
+    password
+  };
+
+  // Read the existing users data from the JSON file
+  let usersData = [];
+  try {
+    const data = fs.readFileSync('users.json');
+    usersData = JSON.parse(data);
+  } catch (err) {
+    console.error(err);
   }
 
-  // Read the requested file
-  fs.readFile(path.join(__dirname, url), (err, data) => {
-    if (err) {
-      // Handle file not found
-      if (err.code === 'ENOENT') {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('File not found');
-      } else {
-        // Handle other errors
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end('Internal server error');
-      }
-    } else {
-      // Serve the file with the appropriate content type
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(data);
-    }
-  });
+  // Add the new user data to the existing data
+  usersData.push(userData);
+
+  // Write the updated data back to the JSON file
+  fs.writeFileSync('users.json', JSON.stringify(usersData));
+
+  // Respond with a success message
+  res.send('Registration successful!');
 });
 
-const port = 3000;
-server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });

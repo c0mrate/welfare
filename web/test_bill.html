@@ -20,12 +20,23 @@
 
         .container {
             max-width: 800px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-left: 50px;
-            padding: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 0px;
+        }
+
+        .container_ {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .container_a {
+            margin-left: 500px;
+            padding: 5px;
+            border: 1px solid #ccc;
         }
 
         .font-th {
@@ -34,6 +45,13 @@
 
         .section {
             margin-right: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .section_ {
+            margin-right: 400px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -64,17 +82,21 @@
         }
 
         .bottom_ {
-            margin-top: 10px;
+            margin-right: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .right-align-total {
             text-align: right;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
 
         .right-align-shipvia {
             text-align: left;
         }
-        
+
         .data-only {
             color: #000000;
         }
@@ -84,7 +106,7 @@
         }
 
         .product-info span {
-            margin-right: 40px;
+            margin-right: 50px;
         }
 
         .product-row {
@@ -97,160 +119,205 @@
             margin-left: auto;
             text-align: left;
         }
+
         .order-section {
-            margin-left: 300px;
+            margin-left: 100px;
+        }
+
+        .left-section {
+            float: left;
+            width: 45%;
+        }
+
+        .right-section {
+            float: right;
+            width: 45%;
         }
     </style>
 </head>
 
 <body>
     <div class="container font-th">
-        <div class="right-align-title">
-            <h2 class="section-header">Order Information</h2>
+        <div class="section">
+            <h2 class="section-header">ศูนย์ส่งเสริมสวัสดิการแบะสิ่งจูงใจ</h2>
+        </div>
+        <div class="right-align-title container_a">
             <div>
                 <div>Order Number:<span id="orderID" class="data-value data-only"></span></div>
             </div>
             <div>
-                <div>Order Date:<span id="orderDate" class="data-value data-only"></span></div>
-            </div>
-            <div>
                 <div>Customer ID:<span id="customerID" class="data-value data-only"></span></div>
             </div>
+            <div>
+                <div>Date:<span id="orderDate" class="data-value data-only"></span>
+                    <span id="orderTime_" class="data-value data-only"></span></div>
+            </div><br>
+            <div>
+                <div>Line ID:<span id="lineID" class="data-value data-only"></span></div>
+            </div>
+            <div>
+                <div>Phone:<span id="phoneNumber" class="data-value data-only"></span></div>
+            </div>
+            <div>
+                <div>Email:<span id="emailAddress" class="data-value data-only"></span></div>
+            </div>
+        </div>
+        <div class="section_ ">
+            <h2 class="section-header">Account/ชื่อบัญชีผู้ทำรายการ</h2>
+            <div>
+                <span>ชื่อผู้ทำรายการ: </span><span id="customerName"></span>
+            </div>
+        </div>
+        <div class="section_ ">
+            <div>
+                <span>เวลา: </span><span id="orderTime"></span>
+                <span>วันที่: </span><span id="orderDate_"></span>
+            </div>
         </div>
         <hr>
         <div class="section">
-            <h2 class="section-header">Name</h2>
-            <div>ชื่อผู้ทำรายการ</div>
-            <div id="username" class="data-value data-only"></div>
-            <!-- <div>Ship Via</div>
-            <div id="shipVia"></div> -->
-        </div>
-        <hr>
-        <div class="section">
-            <h2 class="section-header">Address</h2>
-            <div>ชื่อ</div>
-            <div id="shipName"></div>
-            <div>ที่อยู่</div>
-            <div id="shipAddress"></div>
-            <div>จังหวัด</div>
-            <div id="shipCity"></div>
-            <div>เขต</div>
-            <div id="shipRegion"></div>
-            <div>รหัสไปรษณีย์</div>
-            <div id="shipPostalCode"></div>
-            <div>ประเทศ</div>
-            <div id="shipCountry"></div>
-        </div>
-        <hr>
-        <div class="section">
-            <h2 class="section-header">Order</h2>
+            <h2 class="section-header">Order/รายการสินค้า</h2>
             <div class="order-section">
-                <div id="productsContainer"></div>
+                <div id="productsContainer" class="container"></div>
             </div>
         </div>
         <div class="bottom_">
-            <div class="right-align-shipvia">
-                <div>ชำระค่าสินค้าด้วย</div>
-                <div id="shipVia"></div>
-            </div>
             <div class="right-align-total">
-                <div>Total</div>
-                <div id="total"></div>
+                <span>ชำระค่าสินค้าด้วย</span>
+                <span id="shipVia"></span>
+                <span>ยอดสุทธิ</span>
+                <span id="total" class="container_"></span>
+                <span>บาท</span>
             </div>
         </div>
         <hr>
+        <div class="section">
+            <h2 class="section-header">Address/ที่อยู่</h2>
+        </div>
+        <div class="section">
+            <div class="container left-section">
+                <span>ผู้ส่ง: ศูนย์ส่งเสริมสวัสดิการแบะสิ่งจูงใจ</span><br>
+                <span>ที่อยู่: ร้านค้าสวัสดิการ 1518 ถนนประชาราษฎร์ 1 แขวงวงศ์สว่าง เขตบางซื่อ กรุงเทพมหานคร 10800</span><br>
+                <span>เบอร์โทรติดต่อ: 081-875-7910</span><br>
+            </div>
+            <div class="container right-section">
+                <span>ผู้รับ:
+                    <span id="shipName"></span>
+                </span><br>
+                <span>ที่อยู่:
+                    <span id="shipAddress"></span>
+                    <span id="shipCity"></span>
+                    <span id="shipRegion"></span>
+                    <span id="shipPostalCode"></span>
+                    <span id="shipCountry"></span>
+                </span><br>
+                <span>เบอร์โทรติดต่อ:
+                    <span id="phoneNumber_"></span><br>
+                </span><br>
+                
+            </div>
+        </div>
     </div>
+    <div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetchJSON();
-        });
 
-        function fetchJSON() {
-            fetch('data.json')
-                .then(response => response.json())
-                .then(data => populateHTML(data))
-                .catch(error => {
-                    console.error('Error:', error);
-                    createJSON();
-                });
-        }
-
-        function populateHTML(data) {
-            document.getElementById('orderID').textContent = data.OrderID;
-            document.getElementById('customerID').textContent = data.CustomerID;
-            document.getElementById('username').textContent = data.Username;
-            document.getElementById('orderDate').textContent = data.OrderDate;
-            document.getElementById('shipAddress').textContent = data.ShipAddress;
-            document.getElementById('shipCity').textContent = data.ShipCity;
-            document.getElementById('shipRegion').textContent = data.ShipRegion;
-            document.getElementById('shipPostalCode').textContent = data.ShipPostalCode;
-            document.getElementById('shipCountry').textContent = data.ShipCountry;
-            document.getElementById('shipName').textContent = data.ShipName;
-            document.getElementById('shipVia').textContent = data.ShipVia;
-
-            const productsContainer = document.getElementById('productsContainer');
-            productsContainer.innerHTML = ''; // Clear previous product list
-
-            let total = 0; // Initialize total price
-
-            data.Products.forEach((product, index) => {
-                const productRow = document.createElement('div');
-                productRow.className = 'product-row';
-
-                const productInfo = document.createElement('div');
-                productInfo.className = 'product-info';
-                productInfo.innerHTML = `${index + 1}. ${product.ProductID} ${product.ProductName}<br><span style="margin-left: 250px">${product.ProductSize} จำนวน ${product.ProductQuality} สี ${product.ProductColor}</span><hr>`;
-                productRow.appendChild(productInfo);
-
-                productRow.appendChild(productInfo);
-
-                const productPrice = document.createElement('div');
-                productPrice.className = 'product-price';
-                productPrice.textContent = product.ProductPrice.toFixed(2) + ' บาท';
-                productRow.appendChild(productPrice);
-
-                total += product.ProductQuality * product.ProductPrice; // Calculate product price
-
-                productsContainer.appendChild(productRow);
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                fetchJSON();
             });
-            document.getElementById('total').textContent = total.toFixed(2); // Display total price
-        }
 
-        function createJSON() {
-            const defaultData = {
-                OrderID: 'none',
-                CustomerID: 'N/A',
-                Username: 'Unknown',
-                OrderDate: 'N/A',
-                ShippedDate: 'N/A',
-                ShipAddress: 'N/A',
-                ShipCity: 'N/A',
-                ShipRegion: 'N/A',
-                ShipPostalCode: 'N/A',
-                ShipCountry: 'N/A',
-                ShipName: 'N/A',
-                ShipVia: 'N/A',
-                ProductID: 'N/A',
-                ProductName: 'N/A',
-                ProductQuality: 'N/A',
-                ProductSize: 'N/A',
-                ProductColor: 'N/A',
-                ProductPrice: 'N/A',
-                Total: 'N/A'
-            };
+            function fetchJSON() {
+                fetch('data.json')
+                    .then(response => response.json())
+                    .then(data => populateHTML(data))
+                    .catch(error => {
+                        console.error('Error:', error);
+                        createJSON();
+                    });
+            }
 
-            populateHTML(defaultData);
+            function populateHTML(data) {
+                document.getElementById('orderID').textContent = data.OrderID;
+                document.getElementById('customerName').textContent = data.CustomerName;
+                document.getElementById('emailAddress').textContent = data.EmailAddress;
+                document.getElementById('lineID').textContent = data.LineID;
+                document.getElementById('phoneNumber').textContent = data.PhoneNumber;
+                document.getElementById('phoneNumber_').textContent = data.PhoneNumber;
+                document.getElementById('customerID').textContent = data.CustomerID;
+                document.getElementById('orderDate').textContent = data.OrderDate;
+                document.getElementById('orderTime').textContent = data.OrderTime;
+                document.getElementById('orderTime_').textContent = data.OrderTime;
+                document.getElementById('orderDate_').textContent = data.OrderDate;
+                document.getElementById('shipAddress').textContent = data.ShipAddress;
+                document.getElementById('shipCity').textContent = data.ShipCity;
+                document.getElementById('shipRegion').textContent = data.ShipRegion;
+                document.getElementById('shipPostalCode').textContent = data.ShipPostalCode;
+                document.getElementById('shipCountry').textContent = data.ShipCountry;
+                document.getElementById('shipName').textContent = data.ShipName;
+                document.getElementById('shipVia').textContent = data.ShipVia;
 
-            const jsonData = JSON.stringify(defaultData, null, 2);
-            const blob = new Blob([jsonData], { type: 'application/json' });
+                const productsContainer = document.getElementById('productsContainer');
+                productsContainer.innerHTML = ''; // Clear previous product list
 
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'data.json';
-            link.click();
-        }
-    </script>
+                let total = 0; // Initialize total price
+
+                data.Products.forEach((product, index) => {
+                    const productRow = document.createElement('div');
+                    productRow.className = 'product-row';
+
+                    const productInfo = document.createElement('div');
+                    productInfo.className = 'product-info';
+                    productInfo.innerHTML = `<span>${index + 1}. ${product.ProductID}<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>${product.ProductName} ${product.ProductSize} ${product.ProductColor} ${product.ProductLength}</span><br><span style="margin-left: 350px">จำนวน: ${product.ProductQuality}</span><hr>`;
+                    productRow.appendChild(productInfo);
+                    productRow.appendChild(productInfo);
+
+                    const productPrice = document.createElement('div');
+                    productPrice.className = 'product-price';
+                    productPrice.textContent =  '' + product.ProductPrice.toFixed(2) + ' บาท';
+                    productRow.appendChild(productPrice);
+
+                    total += product.ProductQuality * product.ProductPrice; // Calculate product price
+
+                    productsContainer.appendChild(productRow);
+                });
+                document.getElementById('total').textContent = total.toFixed(2); // Display total price
+            }
+
+            function createJSON() {
+                const defaultData = {
+                    OrderID: 'none',
+                    CustomerName: 'none',
+                    EmailAdress: '-',
+                    CustomerID: 'N/A',
+                    LineID: '-',
+                    PhoneNumber: '-',
+                    Username: 'Unknown',
+                    OrderDate: 'N/A',
+                    OrderTime: 'N/A',
+                    ShipAddress: 'N/A',
+                    ShipName: 'N/A',
+                    ShipVia: 'N/A',
+                    ProductID: 'N/A',
+                    ProductName: 'N/A',
+                    ProductQuality: 'N/A',
+                    ProductSize: 'N/A',
+                    ProductLength: 'N/A',
+                    ProductColor: 'N/A',
+                    ProductPrice: 'N/A',
+                    Total: 'N/A'
+                };
+
+                populateHTML(defaultData);
+
+                const jsonData = JSON.stringify(defaultData, null, 2);
+                const blob = new Blob([jsonData], { type: 'application/json' });
+
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'data.json';
+                link.click();
+            }
+        </script>
 </body>
 
 </html>

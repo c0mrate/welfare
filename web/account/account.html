@@ -13,39 +13,40 @@
     <link href="account.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="account_container" id="container">
+<body class="account_body">
+    <div class="account_container account_th account_body" id="container">
         <div class="account_form-container account_sign-up-container">
-            <form action="/register" method="POST">
-                <h1>สมัครสมาชิก</h1>
-                <span></span>
-                <input type="text" name="name" placeholder="Name" />
-                <input type="email" name="email" placeholder="Email" />
-                <input type="password" name="password" placeholder="Password" />
-                <button type="submit">ยืนยัน</button>
+            <form class="account_form" action="register.php" method="POST">
+                <h1 class="account_h1">สมัครสมาชิก</h1>
+                <span class="account_span"></span>
+                <input type="username" name="username" placeholder="Username" class="account_input" />
+                <input type="email" name="email" placeholder="Email" class="account_input" />
+                <input type="password" name="password" placeholder="Password" class="account_input" />
+                <button type="submit" class="account_button">ยืนยัน</button>
             </form>
         </div>
+        <!-- Rest of the HTML code -->
         <div class="account_form-container account_sign-in-container">
-            <form action="#">
-                <h1>เข้าสู่ระบบ</h1>
-                <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>ยืนยัน</button>
+            <form class="account_form" action="login.php" method="POST">
+                <h1 class="account_h1">เข้าสู่ระบบ</h1>
+                <span class="account_span">or use your account</span>
+                <input type="username" name="username" placeholder="Username" class="account_input" />
+                <input type="password" name="password" placeholder="Password" class="account_input" />
+                <a href="#" class="account_a">Forgot your password?</a>
+                <button type="submit" class="account_button">ยืนยัน</button>
             </form>
         </div>
         <div class="account_overlay-container">
             <div class="account_overlay">
                 <div class="account_overlay-panel account_overlay-left">
-                    <h1>ยินดีต้อนรับ ครับ✋</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="account_ghost" id="signIn">เข้าสู่ระบบ</button>
+                    <h1 class="account_h1">ยินดีต้อนรับครับ✋</h1>
+                    <p class="account_p">To keep connected with us, please login with your personal info</p>
+                    <button class="account_button account_ghost" id="signIn">เข้าสู่ระบบ</button>
                 </div>
                 <div class="account_overlay-panel account_overlay-right">
-                    <h1>สวัสดี ครับ✋</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="account_ghost" id="signUp">สมัครสมาชิก</button>
+                    <h1 class="account_h1">สวัสดีครับ✋</h1>
+                    <p class="account_p">Enter your personal details and start your journey with us</p>
+                    <button class="account_button account_ghost" id="signUp">สมัครสมาชิก</button>
                 </div>
             </div>
         </div>

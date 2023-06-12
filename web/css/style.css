@@ -7137,6 +7137,7 @@ button.bg-danger:focus {
   padding: 4px;
   width: 90px;
 }
+
 .RightAlignedInputs input {
   text-align: right;
 }
@@ -7209,7 +7210,8 @@ button.bg-danger:focus {
   transform: translateX(-50%);
   width: 80%;
   height: 2px;
-  background-color: #000000; /* Change this to your desired color */
+  background-color: #000000;
+  /* Change this to your desired color */
 }
 
 .underline_text_ {
@@ -7226,7 +7228,8 @@ button.bg-danger:focus {
   transform: translateX(-50%);
   width: 0%;
   height: 2px;
-  background-color: #F77100; /* Change this to your desired color */
+  background-color: #F77100;
+  /* Change this to your desired color */
   transition: width 0.3s ease;
 }
 
@@ -7247,7 +7250,8 @@ button.bg-danger:focus {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #ff4a4a; /* Customize the color as desired */
+  background-color: #ff4a4a;
+  /* Customize the color as desired */
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.3s ease;
@@ -7287,7 +7291,7 @@ button.bg-danger:focus {
 .span_landing_header {
   margin-bottom: 10px;
   font-size: 20px;
-  
+
 }
 
 .end_ {
@@ -7302,7 +7306,8 @@ button.bg-danger:focus {
 
 .social-icons {
   display: flex;
-  gap: 10px; /* Adjust the value to change the spacing between icons */
+  gap: 10px;
+  /* Adjust the value to change the spacing between icons */
 }
 
 .social-icons a {
@@ -7311,7 +7316,8 @@ button.bg-danger:focus {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: #f0f0f0; /* Add background color to make the icons visible */
+  background-color: #f0f0f0;
+  /* Add background color to make the icons visible */
   border-radius: 50%;
 }
 
@@ -11020,13 +11026,14 @@ button.bg-dark:focus {
 }
 
 .text-landing {
-  color: #000000!important;
+  color: #000000 !important;
 }
 
 .landing-wallpaper {
   background-image: url('../img/landing2.gif');
   background-repeat: no-repeat;
-  background-size: contain; /* or 'contain' */
+  background-size: contain;
+  /* or 'contain' */
   background-position: center;
 }
 
@@ -11536,4 +11543,269 @@ h6 {
   100% {
     transform: translateY(-15px);
   }
+}
+
+
+
+
+/* account page */
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.account_th {
+  font-family: 'Prompt', sans-serif;
+}
+
+.account_body {
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Prompt', sans-serif;
+	height: 70vh;
+	margin: -20px 0 50px;
+}
+
+.account_h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.account_h2 {
+  text-align: center;
+}
+
+.account_p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+.account_span {
+  font-size: 12px;
+}
+
+.account_a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.account_button {
+  border-radius: 20px;
+  border: 1px solid #f77100;
+  background-color: #f77100;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  font-family: 'Prompt', sans-serif;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+.account_button:active {
+  transform: scale(0.95);
+}
+
+.account_button:focus {
+  outline: none;
+}
+
+.account_button.account_ghost {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+.account_form {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.account_input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.account_container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+}
+
+.account_form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.account_sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.account_container.right-panel-active .account_sign-in-container {
+  transform: translateX(100%);
+}
+
+.account_sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.account_container.right-panel-active .account_sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.account_overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.account_container.right-panel-active .account_overlay-container {
+  transform: translateX(-100%);
+}
+
+.account_overlay {
+  background: #f77100;
+  background: -webkit-linear-gradient(to right, #f77100, #f77100);
+  background: linear-gradient(to right, #f77100, #f77100);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.account_container.right-panel-active .account_overlay {
+  transform: translateX(50%);
+}
+
+.account_overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.account_overlay-left {
+  transform: translateX(-20%);
+}
+
+.account_container.right-panel-active .account_overlay-left {
+  transform: translateX(0);
+}
+
+.account_overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.account_container.right-panel-active .account_overlay-right {
+  transform: translateX(20%);
+}
+
+.account_social-container {
+  margin: 20px 0;
+}
+
+.account_social-container a {
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.account_footer {
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
+}
+
+.account_footer p {
+  margin: 10px 0;
+}
+
+.account_footer i {
+  color: #f77100;
+}
+
+.account_footer a {
+  color: #3c97bf;
+  text-decoration: none;
 }

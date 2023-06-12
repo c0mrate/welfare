@@ -1,40 +1,52 @@
 {
-  "CustomerID": "ALFKI",
+  "CustomerID": "1005001",
+  "EmailAddress": "eed38638@gmail.com",
+  "LineID": "inilll",
+  "PhoneNumber": "0956040676",
   "Username": "admin1",
-  "OrderDate": "1997-08-25",
-  "OrderTime": "none",
-  "ShipAddress": "Obere Str. 57",
-  "ShipCity": "Berlin",
-  "ShipRegion": "",
-  "ShipPostalCode": "12209",
-  "ShipCountry": "Germany",
-  "ShipName": "Alfreds Futterkiste",
+  "CustomerName": "อัษฎาวุธ",
+  "OrderDate": "01/05/2022",
+  "OrderTime": "12:41",
+  "ShipAddress": "602 35/10 อาคาร S9 Residence ซอยพิบูลสงคราม 22 แยก 24 ต.บางเขย อ.เมือง จ.นนทบุรี กรุงเทพมหานคร 11000",
+  "ShipName": "อัษฎาวุธ",
   "ShipVia": "visa",
   "OrderID": "A01",
   "Products": [
     {
-      "ProductID": "P1235",
+      "ProductID": "P001",
       "ProductName": "เสื้อ",
       "ProductQuality": 1,
       "ProductSize": "XL",
       "ProductColor": "แดง",
+      "ProductLength": "",
       "ProductPrice": 100.00
     },
     {
-      "ProductID": "P1235",
-      "ProductName": "เสื้อ",
+      "ProductID": "P002",
+      "ProductName": "เสื้อพละ",
       "ProductQuality": 1,
       "ProductSize": "S",
-      "ProductColor": "แดง",
+      "ProductColor": "",
+      "ProductLength": "",
       "ProductPrice": 150.00
     },
     {
-      "ProductID": "P1234",
+      "ProductID": "P003",
       "ProductName": "กางเกงพละ",
       "ProductQuality": 1,
       "ProductSize": "S",
-      "ProductColor": "แดง",
+      "ProductColor": "",
+      "ProductLength": "",
       "ProductPrice": 120.00
+    },
+    {
+      "ProductID": "P101",
+      "ProductName": "เข็มขัด",
+      "ProductQuality": 1,
+      "ProductSize": "",
+      "ProductColor": "",
+      "ProductLength": "46",
+      "ProductPrice": 90.00
     }
     
   ]
