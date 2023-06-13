@@ -1,7 +1,34 @@
 [
     {
-        "username": "ak",
+        "username": "admin",
         "email": "test01@gmail.com",
-        "password": "root"
+        "password": "1333",
+        "permission": "3",
+        "user_information": [
+            {
+                "name": "Asadawut",
+                "phone": "0950640676",
+                "line": "none",
+                "address1": "none",
+                "address2": "none",
+                "zipcode": "10230"
+            }
+        ]
+    },
+    {
+        "username": "test01",
+        "email": "test01@gmail.com",
+        "password": "1",
+        "permission": "3",
+        "user_information": [
+            {
+                "name": "",
+                "phone": "",
+                "line": "",
+                "address1": "",
+                "address2": "",
+                "zipcode": ""
+            }
+        ]
     }
 ]

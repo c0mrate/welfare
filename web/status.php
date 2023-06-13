@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: account/login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,14 +47,14 @@
                     <div class="con-a-center">
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0 font_increase_size space">
-                                <a href="index.html" class="nav-item nav-link nav-th">เกี่ยวกับ</a>
+                                <a href="index.php" class="nav-item nav-link nav-th">เกี่ยวกับ</a>
                                 <a href="store.html" class="nav-item nav-link nav-th">หน้าหลัก</a>
                                 <a href="product.html" class="nav-item nav-link nav-th">สินค้าทั้งหมด</a>
                                 <a href="detail.html" class="nav-item nav-link nav-th">รายละเอียดสินค้า</a>
-                                <a href="status.html" class="nav-item nav-link nav-th active">สถานะคำสั่งซื้อ</a>
+                                <a href="status.php" class="nav-item nav-link nav-th active">สถานะคำสั่งซื้อ</a>
                             </div>
                             <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                                <a href="account/_account.html" class="btn px-0 ml-3">
+                                <a href="account/login.html" class="btn px-0 ml-3">
                                     <i class="fas fa-user text-primary" id="user-icon"></i>
                                 </a>
                                 <a href="cart" class="btn px-0 ml-3">

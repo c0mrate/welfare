@@ -1,35 +1,57 @@
 <?php
-// Function to check if user login is successful
-function login($username, $password)
-{
-    // Read the users.json file
-    $usersData = file_get_contents('users.json');
-    $users = json_decode($usersData, true);
+session_start();
 
-    // Loop through the users to find a match
+function login($username, $password) {
+    // Read the users.json file
+    $users = json_decode(file_get_contents('users.json'), true);
+    
+    // Check if the username exists in the users array
     foreach ($users as $user) {
-        if ($user['username'] == $username && $user['password'] == $password) {
-            return true; // User login successful
+        if ($user['username'] === $username) {
+            // Verify the password
+            if ($user['password'] === $password) {
+                // Login successful, create a session for the user
+                $_SESSION['username'] = $username;
+                $_SESSION['permission'] = $user['permission'];
+                
+                // Redirect the user based on their permission level
+                if ($user['permission'] == 1) {
+                    header('Location: ../index.php');
+                } elseif ($user['permission'] == 3) {
+                    header('Location: ../administator.php');
+                }
+                exit;
+            }
         }
     }
-
-    return false; // User login failed
+    
+    // Login failed
+    return false;
 }
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the submitted username and password
     $username = $_POST['username'];
     $password = $_POST['password'];
-
-    // Check if user login is successful
+    
     if (login($username, $password)) {
-        // User login successful, redirect to google.com
-        header("Location: https://www.google.com");
-        exit();
+        echo 'Login successful!';
     } else {
-        // User login failed, display an error message or perform any desired action
-        echo "Invalid username or password. Please try again.";
+        echo 'Invalid username or password.';
+    }
+}
+
+// Check if the user is already logged in
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    
+    // Redirect the user based on their permission level
+    if ($_SESSION['permission'] == 1) {
+        header('Location: index.php');
+        exit;
+    } elseif ($_SESSION['permission'] == 3) {
+        header('Location: administrator.php');
+        exit;
     }
 }
 ?>

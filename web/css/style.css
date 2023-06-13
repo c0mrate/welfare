@@ -284,6 +284,7 @@ select {
 
 #user-icon {
   transition: transform 0.3s ease-in-out;
+  margin-left: 10px;
 }
 
 #user-icon:hover {
@@ -2429,6 +2430,7 @@ textarea.form-control {
 
 .was-validated .form-control:valid,
 .form-control.is-valid {
+  z-index: 1;
   border-color: #28a745;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -11569,6 +11571,19 @@ h6 {
 	font-family: 'Prompt', sans-serif;
 	height: 70vh;
 	margin: -20px 0 50px;
+  margin: 0px 0 50px;
+}
+
+.account_body_a {
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Prompt', sans-serif;
+	height: 90vh;
+	margin: -20px 0 50px;
+  margin: 0px 0 50px;
 }
 
 .account_h1 {
@@ -11657,6 +11672,18 @@ h6 {
 	min-height: 480px;
 }
 
+.account_container_a {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 90%;
+	max-width: 90%;
+	min-height: 95%;
+}
+
 .account_form-container {
   position: absolute;
   top: 0;
@@ -11674,11 +11701,22 @@ h6 {
   transform: translateX(100%);
 }
 
+.account_container_a.right-panel-active .account_sign-in-container {
+  transform: translateX(100%);
+}
+
 .account_sign-up-container {
   left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
+}
+
+.account_container_a.right-panel-active .account_sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
 }
 
 .account_container.right-panel-active .account_sign-up-container {
@@ -11718,6 +11756,10 @@ h6 {
   transform: translateX(-100%);
 }
 
+.account_container_a.right-panel-active .account_overlay-container {
+  transform: translateX(-100%);
+}
+
 .account_overlay {
   background: #f77100;
   background: -webkit-linear-gradient(to right, #f77100, #f77100);
@@ -11735,6 +11777,10 @@ h6 {
 }
 
 .account_container.right-panel-active .account_overlay {
+  transform: translateX(50%);
+}
+
+.account_container_a.right-panel-active .account_overlay {
   transform: translateX(50%);
 }
 
@@ -11761,12 +11807,20 @@ h6 {
   transform: translateX(0);
 }
 
+.account_container_a.right-panel-active .account_overlay-left {
+  transform: translateX(0);
+}
+
 .account_overlay-right {
   right: 0;
   transform: translateX(0);
 }
 
 .account_container.right-panel-active .account_overlay-right {
+  transform: translateX(20%);
+}
+
+.account_container_a.right-panel-active .account_overlay-right {
   transform: translateX(20%);
 }
 
@@ -11808,4 +11862,19 @@ h6 {
 .account_footer a {
   color: #3c97bf;
   text-decoration: none;
+}
+
+#user-icon-admin {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+#user-icon-admin {
+  transition: transform 0.3s ease-in-out;
+  margin-left: 15px;
 }
