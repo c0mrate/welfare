@@ -3,7 +3,6 @@ session_start();
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 }
-
 if (!isset($_SESSION['username'])) {
     header("Location: account/login.html");
     exit();
