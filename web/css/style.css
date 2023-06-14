@@ -6,6 +6,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
 
 :root {
   --blue: #007bff;
@@ -11877,4 +11879,18 @@ h6 {
 #user-icon-admin {
   transition: transform 0.3s ease-in-out;
   margin-left: 15px;
+}
+
+.admin-menu {
+  margin: 20px;
+  padding: 10;
+}
+
+.container_admin_menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-button-menu {
+  font-family: 'Roboto Slab', serif;
 }

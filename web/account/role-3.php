@@ -4,7 +4,7 @@ if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 }
 if (!isset($_SESSION['username'])) {
-    header("Location: account/login.html");
+    header("Location: login.php");
     exit();
 }
 ?>
@@ -21,12 +21,12 @@ if (!isset($_SESSION['username'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/animate/" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <a href="account/admin_panel.php">
-        <img src="img/admin.png" class="fas fa-user text-landing" id="user-icon-admin">
+    <a href="admin-tools-3.php">
+        <img src="../img/admin.png" class="fas fa-user text-landing" id="user-icon-admin">
     </a>
     <div class="content-landing-bar nav-th">
         <a>ศูนย์ส่งเสริมสวัสดิการและสิ่งจูงใจ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</a>
@@ -38,25 +38,20 @@ if (!isset($_SESSION['username'])) {
                     <div class="con-a-center">
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto font_increase_size">
-
-                                <a href="index.php" class="nav-item nav-link nav-th active">เกี่ยวกับ</a>
-                                <a href="store.html" class="nav-item nav-link nav-th">หน้าหลัก</a>
-                                <a href="product.html" class="nav-item nav-link nav-th">สินค้าทั้งหมด</a>
-                                <a href="detail.html" class="nav-item nav-link nav-th">รายละเอียดสินค้า</a>
-
-
+                                <a href="role-3.php" class="nav-item nav-link nav-th active">เกี่ยวกับ</a>
+                                <a href="../store.html" class="nav-item nav-link nav-th">หน้าหลัก</a>
+                                <a href="../product.html" class="nav-item nav-link nav-th">สินค้าทั้งหมด</a>
+                                <a href="../detail.html" class="nav-item nav-link nav-th">รายละเอียดสินค้า</a>
                                 <a href="status.php" class="nav-item nav-link nav-th">สถานะคำสั่งซื้อ</a>
+                                <a href="admin-tools-3.php" class="nav-item nav-link nav-th">Admin Tools</a>
                             </div>
                             <div class="navbar-nav ml-auto py-0 d-none d-lg-block nav-th">
                                 <?php if (isset($username)) : ?>
-                                    <span>สวัสดีครับ&#9995;,คุณ
-                                        <?php echo $username; ?>
-                                    </span>
-                                    <a href="account/account.php">
+                                    <a href="account.php">
                                         <i class="fas fa-user text-landing" id="user-icon"></i>
                                     </a>
                                 <?php else : ?>
-                                    <a href="account/login.html">
+                                    <a href="login.php">
                                         <i class="fas fa-user text-landing" id="user-icon"></i>
                                     </a>
                                 <?php endif; ?>
@@ -69,7 +64,7 @@ if (!isset($_SESSION['username'])) {
     </div>
     <div class="landing">
         <div class="position-relative active" style="height: 750px;">
-            <img class="position-absolute w-100 h-100" src="img/landing7.gif" style="object-fit: cover;">
+            <img class="position-absolute w-100 h-100" src="../img/landing7.gif" style="object-fit: cover;">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 700px;">
                     <div class="banner_">
@@ -164,7 +159,7 @@ if (!isset($_SESSION['username'])) {
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 

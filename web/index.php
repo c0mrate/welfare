@@ -53,7 +53,7 @@ if (isset($_SESSION['username'])) {
                                     </a>
 
                                 <?php else : ?>
-                                    <a href="account/login.html">
+                                    <a href="account/login.php">
                                         <i class="fas fa-user text-landing" id="user-icon"></i>
                                     </a>
                                 <?php endif; ?>

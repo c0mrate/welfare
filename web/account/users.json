@@ -2,7 +2,7 @@
     {
         "username": "admin",
         "email": "test01@gmail.com",
-        "password": "1333",
+        "password": "1",
         "permission": "3",
         "user_information": [
             {
@@ -19,7 +19,7 @@
         "username": "test01",
         "email": "test01@gmail.com",
         "password": "1",
-        "permission": "3",
+        "permission": "1",
         "user_information": [
             {
                 "name": "",
