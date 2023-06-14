@@ -1,0 +1,9 @@
+{
+    "billerId": "{biller_id}",
+    "transDate": "{transaction_date}",
+    "transTime": "{transaction_time}",
+    "reference1": "{reference_1}",
+    "reference2": "{reference_2}",
+    "amount": "{payment_amount}"
+  }
+  
