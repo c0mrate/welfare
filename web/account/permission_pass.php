@@ -6,7 +6,7 @@ if (isset($_SESSION['permission']) && $_SESSION['permission'] == 1) {
     exit;
 } elseif (isset($_SESSION['permission']) && $_SESSION['permission'] == 3) {
     // Redirect the user to administrator.php
-    header("Location: role-3.php");
+    header("Location: dashboard/admin-tools.php");
     exit;
 } elseif (isset($_SESSION['permission']) && $_SESSION['permission'] == 2) {
     // Redirect the user to administrator.php

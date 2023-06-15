@@ -1,10 +1,20 @@
+<?php
+session_start();
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+}
+if (!isset($_SESSION['username'])) {
+    header("Location: ../login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class="has-aside-left has-aside-mobile-transition has-navbar-fixed-top has-aside-expanded">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tables - Admin One HTML - Bulma Admin Dashboard</title>
+  <title>Admin Tools</title>
 
   <!-- Bulma is included -->
   <link rel="stylesheet" href="css/main.min.css">
@@ -103,15 +113,15 @@
   <aside class="aside is-placed-left is-expanded">
     <div class="aside-tools">
       <div class="aside-tools-label">
-        <span><b>Admin</b> One HTML</span>
+        <span><b>Admin</b> Tools</span>
       </div>
     </div>
     <div class="menu is-menu-main">
       <p class="menu-label">General</p>
       <ul class="menu-list">
         <li>
-          <a href="index.html" class="has-icon">
-            <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
+          <a href="admin-tools.html" class="has-icon">
+            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
             <span class="menu-item-label">Dashboard</span>
           </a>
         </li>
@@ -119,43 +129,22 @@
       <p class="menu-label">Examples</p>
       <ul class="menu-list">
         <li>
-          <a href="tables.html" class="is-active has-icon">
-            <span class="icon has-update-mark"><i class="mdi mdi-table"></i></span>
-            <span class="menu-item-label">Tables</span>
+          <a href="users.php" class="has-icon">
+            <span class="icon"><i class="mdi mdi-table"></i></span>
+            <span class="menu-item-label">Users</span>
           </a>
         </li>
         <li>
-          <a href="forms.html" class="has-icon">
-            <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
-            <span class="menu-item-label">Forms</span>
+          <a href="order.php" class="is-active has-icon">
+            <span class="icon"><i class="mdi mdi-table"></i></span>
+            <span class="menu-item-label">Orders</span>
           </a>
         </li>
         <li>
-          <a href="profile.html" class="has-icon">
-            <span class="icon"><i class="mdi mdi-account-circle"></i></span>
-            <span class="menu-item-label">Profile</span>
+          <a href="sell.php" class="has-icon">
+          <span class="icon"><i class="mdi mdi-table"></i></span>
+            <span class="menu-item-label">Sell</span>
           </a>
-        </li>
-        <li>
-          <a class="has-icon has-dropdown-icon">
-            <span class="icon"><i class="mdi mdi-view-list"></i></span>
-            <span class="menu-item-label">Submenus</span>
-            <div class="dropdown-icon">
-              <span class="icon"><i class="mdi mdi-plus"></i></span>
-            </div>
-          </a>
-          <ul>
-            <li>
-              <a href="#void">
-                <span>Sub-item One</span>
-              </a>
-            </li>
-            <li>
-              <a href="#void">
-                <span>Sub-item Two</span>
-              </a>
-            </li>
-          </ul>
         </li>
       </ul>
       <p class="menu-label">About</p>

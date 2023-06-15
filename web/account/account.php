@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-    $data = file_get_contents('users.json');
+    $data = file_get_contents('dashboard/users_db.json');
     $users = json_decode($data, true);
     if ($users !== null) {
         $loggedInUser = $_SESSION['username'];
@@ -14,7 +14,7 @@ if (isset($_SESSION['username'])) {
                 $phone = $userInformation['phone'];
                 $line = $userInformation['line'];
                 $address1 = $userInformation['address1'];
-                $address2 = $userInformation['address2'];
+                $province = $userInformation['province'];
                 $zipcode = $userInformation['zipcode'];
                 break;
             }
@@ -60,7 +60,7 @@ if (isset($_SESSION['username'])) {
                             </div>
                             <div class="navbar-nav ml-auto py-0 d-none d-lg-block nav-th">
                                 <?php if (isset($username)) : ?>
-                                    <span>สวัสดีครับ✋,คุณ
+                                    <span>สวัสดีครับ &#9995;,คุณ
                                         <?php echo $username; ?>
                                     </span>
                                     <a href="account.php">
@@ -88,7 +88,7 @@ if (isset($_SESSION['username'])) {
                     <input type="number" name="phone" value="<?php echo $phone; ?>" placeholder="095-XXX-XXXX" class="account_input" required />
                     <input type="text" name="line" value="<?php echo $line; ?>" placeholder="Line ID" class="account_input" />
                     <input type="text" name="address1" value="<?php echo $address1; ?>" placeholder="ที่อยู่" class="account_input" required />
-                    <input type="text" name="address2" value="<?php echo $address2; ?>" placeholder="ที่อยู่" class="account_input" required />
+                    <input type="text" name="province" value="<?php echo $province; ?>" placeholder="จังหวัด" class="account_input" required />
                     <input type="text" name="zipcode" value="<?php echo $zipcode; ?>" placeholder="รหัสไปรษณีย์" class="account_input" required />
                     <button type="submit" class="account_button">ยืนยัน</button>
                 </form>

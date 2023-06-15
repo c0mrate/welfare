@@ -2,8 +2,8 @@
 session_start();
 
 function login($username, $password) {
-    // Read the users.json file
-    $users = json_decode(file_get_contents('users.json'), true);
+    // Read the dashboard/users_db.json file
+    $users = json_decode(file_get_contents('dashboard/users_db.json'), true);
     
     // Check if the username exists in the users array
     foreach ($users as $user) {
@@ -18,7 +18,7 @@ function login($username, $password) {
                 if ($user['permission'] == 1) {
                     header('Location: ../index.php');
                 } elseif ($user['permission'] == 3) {
-                    header('Location: admin-tools-3.php');
+                    header('Location: dashboard/admin-tools.php');
                 }
                 exit;
             }
@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) {
         header('Location: index.php');
         exit;
     } elseif ($_SESSION['permission'] == 3) {
-        header('Location: administrator.php');
+        header('Location: dashboard/admin-tools.php');
         exit;
     }
 }
