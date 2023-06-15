@@ -120,7 +120,7 @@ if (!isset($_SESSION['username'])) {
       <p class="menu-label">General</p>
       <ul class="menu-list">
         <li>
-          <a href="admin-tools.html" class="has-icon">
+          <a href="admin-tools.php" class="has-icon">
             <span class="icon"><i class="mdi mdi-buffer default"></i></span>
             <span class="menu-item-label">Dashboard</span>
           </a>
