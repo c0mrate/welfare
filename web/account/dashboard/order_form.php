@@ -1,110 +1,139 @@
 <?php
 
-// Function to check userID and update data
-function updateUserData($userID, $formData)
-{
-    // Implement your logic to update the user data for the given userID
-    // For example, you can update the data in a database table
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the orderID from the URL
+    $orderID = $_GET['orderID'];
 
-    // Extract the form data
-    $name = $formData['name'];
-    $email = $formData['email'];
-    $phone = $formData['phone'];
-    $line = $formData['line'];
-    $address = $formData['address'];
-    $province = $formData['province'];
-    $zipcode = $formData['zipcode'];
-    $ProductID = $formData['ProductID'];
-    $ProductName = $formData['ProductName'];
-    $ProductQuality = $formData['ProductQuality'];
-    $ProductSize = $formData['ProductSize'];
-    $ProductColor = $formData['ProductColor'];
-    $ProductLength = $formData['ProductLength'];
-    $ProductPrice = $formData['ProductPrice'];
+    // Read the JSON data from a file or database
+    $jsonData = file_get_contents('orderholder.json');
 
-    // Update the user data in the database using the provided userID
-    // Example code using MySQLi prepared statements:
+    // Decode the JSON data into a PHP associative array
+    $data = json_decode($jsonData, true);
 
-    // Assuming you have a database connection
-    $conn = new mysqli('localhost', 'username', 'password', 'database');
+    // Find the user with the matching orderID
+    foreach ($data as &$user) {
+        foreach ($user['order'] as &$order) {
+            if ($order['orderID'] == $orderID) {
+                // Update the user information and order details
+                $user['user_information'][0]['name'] = $_POST['name'];
+                $user['user_information'][0]['phone'] = $_POST['phone'];
+                // Update other fields as needed
 
-    // Check if the connection was successful
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+                $order['product'][0]['ProductID'] = $_POST['productID'];
+                $order['product'][0]['ProductName'] = $_POST['productName'];
+                // Update other fields as needed
+
+                break 2; // Exit both loops once the order is found
+            }
+        }
     }
 
-    // Prepare the SQL statement
-    $stmt = $conn->prepare("UPDATE users SET name=?, email=?, phone=?, line=?, address=?, province=?, zipcode=?, ProductID=?, ProductName=?, ProductQuality=?, ProductSize=?, ProductColor=?, ProductLength=?, ProductPrice=? WHERE userID=?");
+    // Encode the updated data back to JSON
+    $jsonData = json_encode($data, JSON_PRETTY_PRINT);
 
-    // Bind the parameters
-    $stmt->bind_param("ssssssssssssssi", $name, $email, $phone, $line, $address, $province, $zipcode, $ProductID, $ProductName, $ProductQuality, $ProductSize, $ProductColor, $ProductLength, $ProductPrice, $userID);
+    // Save the updated JSON data to a file or database
+    file_put_contents('orderholder.json', $jsonData);
 
-    // Execute the statement
-    if ($stmt->execute()) {
-        echo "User data updated successfully";
-    } else {
-        echo "Error updating user data: " . $stmt->error;
-    }
-
-    // Close the statement and connection
-    $stmt->close();
-    $conn->close();
-}
-
-// Check if the form is submitted and process the update
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
-    // Get the userID from the form data
-    $userID = $_POST['orderID'];
-
-    // Call the updateUserData function passing the userID and the form data
-    updateUserData($userID, $_POST);
+    // Redirect the user to a success page
+    header('Location: create-order.php');
+    exit;
 }
 
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Order Form</title>
 </head>
-
 <body>
     <div class="card-content">
-        <form method="POST" action="">
-            <input class="input" type="text" name="orderID" value="<?php echo $_GET['orderID']; ?>" readonly><br>
-            <hr>
-            <span>name</span>
-            <input class="input" type="text" name="name" value="" readonly>
-            <span>email</span>
-            <input class="input" type="text" name="email" value=""><br>
-            <span>phone</span>
-            <input class="input" type="text" name="phone" value="">
-            <span>line</span>
-            <input class="input" type="text" name="line" value=""><br>
-            <span>address</span>
-            <input class="input" type="text" name="address" value="">
-            <span>province</span>
-            <input class="input" type="text" name="province" value=""><br>
-            <span>zipcode</span>
-            <input class="input" type="text" name="zipcode" value="">
-            <span>ProductID</span>
-            <input class="input" type="text" name="ProductID" value=""><br>
-            <span>ProductName</span>
-            <input class="input" type="text" name="ProductName" value="">
-            <span>ProductQuality</span>
-            <input class="input" type="text" name="ProductQuality" value=""><br>
-            <span>ProductSize</span>
-            <input class="input" type="text" name="ProductSize" value="">
-            <span>ProductColor</span>
-            <input class="input" type="text" name="ProductColor" value=""><br>
-            <span>ProductLength</span>
-            <input class="input" type="text" name="ProductLength" value="">
-            <span>ProductPrice</span>
-            <input class="input" type="text" name="ProductPrice" value="">
-            <input type="submit" name="update" value="Update">
+        <form method="POST">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Order ID</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input class="input" type="text" name="orderID" value="<?php echo $_GET['orderID']; ?>" readonly>
+                            <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Name</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input class="input" type="text" name="name" required>
+                            <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Phone</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input class="input" type="text" name="phone" required>
+                            <span class="icon is-small is-left"><i class="mdi mdi-phone"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Product ID</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input class="input" type="text" name="productID" required>
+                            <span class="icon is-small is-left"><i class="mdi mdi-cart"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Product Name</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input class="input" type="text" name="productName" required>
+                            <span class="icon is-small is-left"><i class="mdi mdi-cart"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label"></div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
+    <script>
+        const orderID = '<?php echo $_GET['orderID']; ?>';
+        document.querySelector('input[name="orderID"]').value = orderID;
+    </script>
 </body>
-
 </html>
