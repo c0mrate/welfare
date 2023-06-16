@@ -98,13 +98,13 @@ $users = json_decode($usersData, true);
         <p class="menu-label">Examples</p>
         <ul class="menu-list">
           <li>
-            <a href="users.php" class="is-active has-icon">
+            <a href="users.php" class="has-icon">
               <span class="icon"><i class="mdi mdi-table"></i></span>
               <span class="menu-item-label">Users</span>
             </a>
           </li>
           <li>
-            <a href="order.php" class="has-icon">
+            <a href="order.php" class="is-active has-icon">
               <span class="icon"><i class="mdi mdi-table"></i></span>
               <span class="menu-item-label">Orders</span>
             </a>
