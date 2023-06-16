@@ -89,7 +89,7 @@ $users = json_decode($usersData, true);
         <p class="menu-label">General</p>
         <ul class="menu-list">
           <li>
-            <a href="admin-tools.php" class="has-icon">
+            <a href="Dashboard.php" class="has-icon">
               <span class="icon"><i class="mdi mdi-buffer default"></i></span>
               <span class="menu-item-label">Dashboard</span>
             </a>
@@ -120,9 +120,9 @@ $users = json_decode($usersData, true);
         <p class="menu-label">About</p>
         <ul class="menu-list">
           <li>
-            <a href="https://github.com/vikdiesel/admin-one-bulma-dashboard" target="_blank" class="has-icon">
+            <a href="create-order.php" class="has-icon">
               <span class="icon"><i class="mdi mdi-github-circle"></i></span>
-              <span class="menu-item-label">GitHub</span>
+              <span class="menu-item-label">Create Order</span>
             </a>
           </li>
           <li>

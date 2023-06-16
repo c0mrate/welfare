@@ -43,12 +43,12 @@ if (isset($_SESSION['username'])) {
                                 <a href="status.php" class="nav-item nav-link nav-th">สถานะคำสั่งซื้อ</a>
                             </div>
                             <div class="navbar-nav ml-auto py-0 d-none d-lg-block nav-th">
-                            <?php if (isset($username)) : ?>
+                                <?php if (isset($username)) : ?>
                                     <span>สวัสดีครับ✋,คุณ
                                         <?php echo $username; ?>
                                     </span>
 
-                                    <a href="account/account.php" >
+                                    <a href="account/account.php">
                                         <i class="fas fa-user text-landing" id="user-icon"></i>
                                     </a>
 

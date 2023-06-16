@@ -1,0 +1,102 @@
+[
+    {
+        "userID": "",
+        "createDate": "",
+        "role": "",
+        "img": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "permission": "",
+        "user_information": [
+            {
+                "name": "Thipprawa",
+                "phone": "",
+                "line": "",
+                "address1": "",
+                "province": "",
+                "zipcode": ""
+            }
+        ],
+        "order": [
+            {
+                "orderID": "3730406162023",
+                "product": [
+                    {
+                        "ProductID": "",
+                        "ProductName": "",
+                        "ProductQuality": 0,
+                        "ProductSize": "",
+                        "ProductColor": "",
+                        "ProductLength": "",
+                        "ProductPrice": 0
+                    }
+                ]
+            },
+            {
+                "orderID": "4498306162023",
+                "product": [
+                    {
+                        "ProductID": "",
+                        "ProductName": "",
+                        "ProductQuality": 0,
+                        "ProductSize": "",
+                        "ProductColor": "",
+                        "ProductLength": "",
+                        "ProductPrice": 0
+                    }
+                ]
+            },
+            {
+                "orderID": "4594206162023",
+                "product": [
+                    {
+                        "ProductID": "",
+                        "ProductName": "",
+                        "ProductQuality": 0,
+                        "ProductSize": "",
+                        "ProductColor": "",
+                        "ProductLength": "",
+                        "ProductPrice": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "userID": "",
+        "createDate": "",
+        "role": "",
+        "img": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "permission": "",
+        "user_information": [
+            {
+                "name": "Asadawut",
+                "phone": "",
+                "line": "",
+                "address1": "",
+                "province": "",
+                "zipcode": ""
+            }
+        ],
+        "order": [
+            {
+                "orderID": "3369506162023",
+                "product": [
+                    {
+                        "ProductID": "",
+                        "ProductName": "",
+                        "ProductQuality": 0,
+                        "ProductSize": "",
+                        "ProductColor": "",
+                        "ProductLength": "",
+                        "ProductPrice": 0
+                    }
+                ]
+            }
+        ]
+    }
+]

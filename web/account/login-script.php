@@ -18,7 +18,7 @@ function login($username, $password) {
                 if ($user['permission'] == 1) {
                     header('Location: ../index.php');
                 } elseif ($user['permission'] == 3) {
-                    header('Location: dashboard/admin-tools.php');
+                    header('Location: dashboard/Dashboard.php');
                 }
                 exit;
             }
@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) {
         header('Location: index.php');
         exit;
     } elseif ($_SESSION['permission'] == 3) {
-        header('Location: dashboard/admin-tools.php');
+        header('Location: dashboard/Dashboard.php');
         exit;
     }
 }
