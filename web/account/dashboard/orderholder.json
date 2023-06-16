@@ -48,41 +48,5 @@
                 ]
             }
         ]
-    },
-    {
-        "userID": "",
-        "createDate": "",
-        "role": "",
-        "img": "",
-        "username": "",
-        "email": "",
-        "password": "",
-        "permission": "",
-        "user_information": [
-            {
-                "name": "asd",
-                "phone": "dasdas",
-                "line": "",
-                "address1": "",
-                "province": "",
-                "zipcode": ""
-            }
-        ],
-        "order": [
-            {
-                "orderID": "7134006162023",
-                "product": [
-                    {
-                        "ProductID": "dasdas",
-                        "ProductName": "dasd",
-                        "ProductQuality": 0,
-                        "ProductSize": "",
-                        "ProductColor": "",
-                        "ProductLength": "",
-                        "ProductPrice": 0
-                    }
-                ]
-            }
-        ]
     }
 ]
