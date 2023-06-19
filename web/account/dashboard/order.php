@@ -190,7 +190,6 @@ $users = json_decode($usersData, true);
                 <thead>
                   <tr>
                     <th></th>
-                    <th>Username</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
@@ -208,8 +207,6 @@ $users = json_decode($usersData, true);
                           <img src="<?= $user['img']; ?>" class="is-rounded">
                         </div>
                       </td>
-
-                      <td data-label="Username"><?= $user['username']; ?></td>
                       <td data-label="Name"><?= $user['user_information'][0]['name']; ?></td>
                       <td data-label="Email"><?= $user['email']; ?></td>
                       <td data-label="Phone"><?= $user['user_information'][0]['phone']; ?></td>

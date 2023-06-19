@@ -46,7 +46,7 @@ function createOrder($name) {
         file_put_contents($orderHolderFile, $jsonData);
 
         // Navigate to the website page with the order form and pass the orderID as a query parameter
-        header("Location: order_form.php?orderID=$orderID");
+        header("Location: GuestOrderForm.php?orderID=$orderID");
         exit();
     }
 
@@ -104,7 +104,7 @@ function createOrder($name) {
     file_put_contents($orderHolderFile, $jsonData);
 
     // Navigate to the website page with the order form and pass the orderID as a query parameter
-    header("Location: order_form.php?orderID=$orderID");
+    header("Location: GuestOrderForm.php?orderID=$orderID");
     exit();
 }
 

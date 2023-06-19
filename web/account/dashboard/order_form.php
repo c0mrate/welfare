@@ -1,51 +1,54 @@
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the orderID from the URL
     $orderID = $_GET['orderID'];
-
-    // Read the JSON data from a file or database
     $jsonData = file_get_contents('orderholder.json');
-
-    // Decode the JSON data into a PHP associative array
     $data = json_decode($jsonData, true);
-
-    // Find the user with the matching orderID
     foreach ($data as &$user) {
         foreach ($user['order'] as &$order) {
             if ($order['orderID'] == $orderID) {
-                // Update the user information and order details
                 $user['user_information'][0]['name'] = $_POST['name'];
+                $user['email'] = $_POST['email'];
                 $user['user_information'][0]['phone'] = $_POST['phone'];
-                // Update other fields as needed
-
+                $user['user_information'][0]['line'] = $_POST['line'];
                 $order['product'][0]['ProductID'] = $_POST['productID'];
                 $order['product'][0]['ProductName'] = $_POST['productName'];
-                // Update other fields as needed
-
-                break 2; // Exit both loops once the order is found
+                break 2;
             }
         }
     }
-
-    // Encode the updated data back to JSON
     $jsonData = json_encode($data, JSON_PRETTY_PRINT);
-
-    // Save the updated JSON data to a file or database
     file_put_contents('orderholder.json', $jsonData);
-
-    // Redirect the user to a success page
     header('Location: create-order.php');
     exit;
 }
+$orderID = $_GET['orderID'];
+$jsonData = file_get_contents('orderholder.json');
+$data = json_decode($jsonData, true);
 
+$userInformation = null;
+foreach ($data as &$user) {
+    foreach ($user['order'] as &$order) {
+        if ($order['orderID'] == $orderID) {
+            $userInformation = $user['user_information'][0];
+            break 2;
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Order Form</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forms - Admin One HTML - Bulma Admin Dashboard</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 </head>
+
 <body>
     <div class="card-content">
         <form method="POST">
@@ -62,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
             </div>
-            
+
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
                     <label class="label">Name</label>
@@ -70,8 +73,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="field-body">
                     <div class="field">
                         <p class="control is-expanded has-icons-left">
-                            <input class="input" type="text" name="name" required>
+                            <input class="input" type="text" name="name" value="<?php echo isset($userInformation['name']) ? $userInformation['name'] : ''; ?>" required>
                             <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Email</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input class="input" type="text" name="email" required>
+                            <span class="icon is-small is-left"><i class="mdi mdi-phone"></i></span>
                         </p>
                     </div>
                 </div>
@@ -90,6 +107,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
             </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Line</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                            <input class="input" type="text" name="line" required>
+                            <span class="icon is-small is-left"><i class="mdi mdi-phone"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
 
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
@@ -136,4 +169,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         document.querySelector('input[name="orderID"]').value = orderID;
     </script>
 </body>
+
 </html>
