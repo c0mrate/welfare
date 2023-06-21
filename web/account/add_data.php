@@ -11,7 +11,7 @@ $data = json_decode($jsonData, true);
 $name = $_POST['name'];
 $phone = $_POST['phone'];
 $line = $_POST['line'];
-$address1 = $_POST['address1'];
+$address = $_POST['address'];
 $province = $_POST['province'];
 $zipcode = $_POST['zipcode'];
 
@@ -25,7 +25,7 @@ foreach ($data as &$user) {
         $user['user_information'][0]['name'] = $name;
         $user['user_information'][0]['phone'] = $phone;
         $user['user_information'][0]['line'] = $line;
-        $user['user_information'][0]['address1'] = $address1;
+        $user['user_information'][0]['address'] = $address;
         $user['user_information'][0]['province'] = $province;
         $user['user_information'][0]['zipcode'] = $zipcode;
         break;

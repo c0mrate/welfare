@@ -28,7 +28,7 @@ if ($user) {
   $email = $user['email'];
   $phone = $user['user_information'][0]['phone'];
   $line = $user['user_information'][0]['line'];
-  $address = $user['user_information'][0]['address1'];
+  $address = $user['user_information'][0]['address'];
   $province = $user['user_information'][0]['province'];
   $zipcode = $user['user_information'][0]['zipcode'];
 ?>

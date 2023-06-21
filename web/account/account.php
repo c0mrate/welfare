@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
                 $name = $userInformation['name'];
                 $phone = $userInformation['phone'];
                 $line = $userInformation['line'];
-                $address1 = $userInformation['address1'];
+                $address = $userInformation['address'];
                 $province = $userInformation['province'];
                 $zipcode = $userInformation['zipcode'];
                 break;
@@ -87,7 +87,7 @@ if (isset($_SESSION['username'])) {
                     <input type="text" name="name" value="<?php echo $name; ?>" placeholder="ชื่อ-นามสกุล" class="account_input" required />
                     <input type="number" name="phone" value="<?php echo $phone; ?>" placeholder="095-XXX-XXXX" class="account_input" required />
                     <input type="text" name="line" value="<?php echo $line; ?>" placeholder="Line ID" class="account_input" />
-                    <input type="text" name="address1" value="<?php echo $address1; ?>" placeholder="ที่อยู่" class="account_input" required />
+                    <input type="text" name="address" value="<?php echo $address; ?>" placeholder="ที่อยู่" class="account_input" required />
                     <input type="text" name="province" value="<?php echo $province; ?>" placeholder="จังหวัด" class="account_input" required />
                     <input type="text" name="zipcode" value="<?php echo $zipcode; ?>" placeholder="รหัสไปรษณีย์" class="account_input" required />
                     <button type="submit" class="account_button">ยืนยัน</button>

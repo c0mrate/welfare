@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = isset($_POST['name']) ? $_POST['name'] : '';
     $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
     $line = isset($_POST['line']) ? $_POST['line'] : '';
-    $address1 = isset($_POST['address1']) ? $_POST['address1'] : '';
+    $address = isset($_POST['address']) ? $_POST['address'] : '';
     $province = isset($_POST['province']) ? $_POST['province'] : '';
     $zipcode = isset($_POST['zipcode']) ? $_POST['zipcode'] : '';
 
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'name' => $name,
                 'phone' => $phone,
                 'line' => $line,
-                'address1' => $address1,
+                'address' => $address,
                 'province' => $province,
                 'zipcode' => $zipcode
             )

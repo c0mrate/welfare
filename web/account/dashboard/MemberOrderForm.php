@@ -167,7 +167,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <textarea class="textarea" placeholder="" readonly>ที่อยู่: <?php echo $user['user_information'][0]['address1'] . ' ' . $user['user_information'][0]['province'] . ' ' . $user['user_information'][0]['zipcode']; ?></textarea>
+                                            <textarea class="textarea" placeholder="" readonly>ที่อยู่: <?php echo $user['user_information'][0]['address'] . ' ' . $user['user_information'][0]['province'] . ' ' . $user['user_information'][0]['zipcode']; ?></textarea>
                                         </div>
                                     </div>
                                 </div>

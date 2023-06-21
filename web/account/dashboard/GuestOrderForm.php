@@ -7,18 +7,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($user['order'] as &$order) {
             if ($order['orderID'] == $orderID) {
                 $user['user_information'][0]['name'] = $_POST['name'];
-                $user['email'] = $_POST['email'];
                 $user['user_information'][0]['phone'] = $_POST['phone'];
                 $user['user_information'][0]['line'] = $_POST['line'];
-                $order['product'][0]['ProductID'] = $_POST['productID'];
-                $order['product'][0]['ProductName'] = $_POST['productName'];
+                $user['user_information'][0]['address'] = $_POST['address'];
                 break 2;
             }
         }
     }
     $jsonData = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents('orderholder.json', $jsonData);
-    header('Location: create-order.php');
+    header("Location: GuestOrderForm_Second.php?orderID=" . urlencode($orderID));
     exit;
 }
 $orderID = $_GET['orderID'];
@@ -191,7 +189,7 @@ foreach ($data as &$user) {
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <textarea class="textarea" placeholder="Customer address"></textarea>
+                                        <textarea class="textarea" name="address" placeholder="<?php echo isset($userInformation['address']) ? $userInformation['address'] : ''; ?>" name="address" value="<?php echo isset($userInformation['address']) ? $userInformation['address'] : ''; ?>"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -202,172 +200,13 @@ foreach ($data as &$user) {
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <button class="button is-primary" type="submit">Submit</button>
+                                        <button class="button is-primary" type="submit">Save and go Order</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                     </form>
-                </div>
-            </div>
-            <section class="section is-main-section">
-                <div class="card has-table">
-                    <header class="card-header">
-                        <p class="card-header-title">
-                            <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-                            Clients
-                        </p>
-                        <a href="#" class="card-header-icon">
-                            <span class="icon"><i class="mdi mdi-reload"></i></span>
-                        </a>
-                    </header>
-                    <div class="card-content">
-                        <div class="b-table has-pagination">
-                            <div class="table-wrapper has-mobile-cards">
-                                <table class="table is-fullwidth is-striped is-hoverable is-fullwidth">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>Name</th>
-                                            <th>Quality</th>
-                                            <th>Size</th>
-                                            <th>Color</th>
-                                            <th>Length</th>
-                                            <th>Price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td data-label=""></td>
-                                            <td data-label="Name"></td>
-                                            <td data-label="Quality"></td>
-                                            <td data-label="Size"></td>
-                                            <td data-label="Color"></td>
-                                            <td data-label="Length"></td>
-                                            <td data-label="Price"></td>
-                                            <td class="is-actions-cell">
-                                                <div class="buttons is-right">
-                                                    <a href="" class="button is-small is-primary" type="button">
-                                                        <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                                    </a>
-                                                    <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
-                                                        <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        <span class="icon"><i class="mdi mdi-ballot-outline default"></i></span>
-                        Custom elements
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="field is-horizontal">
-                        <div class="field-label"><label class="label">ชื่อสินค้า</label></div>
-                        <div class="field-body">
-                            <div class="field">
-                                <input class="input" type="text" value="">
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field has-check is-horizontal">
-                        <div class="field-label"><label class="label">จำนวน</label></div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="field is-grouped-multiline is-grouped">
-                                    <div class="control">
-                                        <input class="input" type="text" value="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field has-check is-horizontal">
-                        <div class="field-label"><label class="label">size</label></div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="field is-grouped-multiline is-grouped">
-                                    <div class="control">
-                                        <label class="b-checkbox checkbox"><input type="checkbox" value="lorem">
-                                            <span class="check is-primary"></span>
-                                            <span class="control-label">S</span>
-                                        </label>
-                                    </div>
-                                    <div class="control">
-                                        <label class="b-checkbox checkbox"><input type="checkbox" value="lorem">
-                                            <span class="check is-primary"></span>
-                                            <span class="control-label">M</span>
-                                        </label>
-                                    </div>
-                                    <div class="control">
-                                        <label class="b-checkbox checkbox"><input type="checkbox" value="ipsum">
-                                            <span class="check is-primary"></span>
-                                            <span class="control-label">L</span>
-                                        </label>
-                                    </div>
-                                    <div class="control">
-                                        <label class="b-checkbox checkbox"><input type="checkbox" value="dolore">
-                                            <span class="check is-primary"></span>
-                                            <span class="control-label">XL</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field has-check is-horizontal">
-                        <div class="field-label"><label class="label">ขนาด</label></div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="field is-grouped-multiline is-grouped">
-                                    <div class="control">
-                                        <input class="input" type="text" value="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field has-check is-horizontal">
-                        <div class="field-label"><label class="label">ราคา</label></div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="field is-grouped-multiline is-grouped">
-                                    <div class="control">
-                                        <input class="input" type="text" value="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal"><label class="label"></label></div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="field file">
-                                    <label class="upload control">
-                                        <a class="button is-primary">
-                                            <span>Create Order</span>
-                                        </a>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

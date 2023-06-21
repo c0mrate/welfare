@@ -5,36 +5,23 @@
         "role": "",
         "img": "",
         "username": "",
-        "email": null,
+        "email": "",
         "password": "",
         "permission": "",
         "user_information": [
             {
-                "name": "Thipprawa",
-                "phone": "0950640676",
-                "line": "inilll",
-                "address1": "",
+                "name": "",
+                "phone": "",
+                "line": "",
+                "address": "",
                 "province": "",
                 "zipcode": ""
             }
         ],
         "order": [
             {
-                "orderID": "1814106192023",
-                "product": [
-                    {
-                        "ProductID": null,
-                        "ProductName": null,
-                        "ProductQuality": 0,
-                        "ProductSize": "",
-                        "ProductColor": "",
-                        "ProductLength": "",
-                        "ProductPrice": 0
-                    }
-                ]
-            },
-            {
-                "orderID": "9789906192023",
+                "orderID": "",
+                "orderDate": "",
                 "product": [
                     {
                         "ProductID": "",
@@ -46,9 +33,32 @@
                         "ProductPrice": 0
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "userID": "",
+        "createDate": "",
+        "role": "",
+        "img": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "permission": "",
+        "user_information": [
             {
-                "orderID": "2673606192023",
+                "name": "Asadawut",
+                "phone": "0950640676",
+                "line": "",
+                "address": "",
+                "province": "",
+                "zipcode": ""
+            }
+        ],
+        "order": [
+            {
+                "orderID": "6456506212023",
+                "orderDate": "2023-06-21 10:30:43",
                 "product": [
                     {
                         "ProductID": "",
@@ -60,23 +70,32 @@
                         "ProductPrice": 0
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "userID": "",
+        "createDate": "",
+        "role": "",
+        "img": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "permission": "",
+        "user_information": [
             {
-                "orderID": "5993506192023",
-                "product": [
-                    {
-                        "ProductID": null,
-                        "ProductName": null,
-                        "ProductQuality": 0,
-                        "ProductSize": "",
-                        "ProductColor": "",
-                        "ProductLength": "",
-                        "ProductPrice": 0
-                    }
-                ]
-            },
+                "name": "Thipprawa",
+                "phone": "",
+                "line": "",
+                "address": "",
+                "province": "",
+                "zipcode": ""
+            }
+        ],
+        "order": [
             {
-                "orderID": "9443606192023",
+                "orderID": "3725106212023",
+                "orderDate": "2023-06-21 10:54:43",
                 "product": [
                     {
                         "ProductID": "",
