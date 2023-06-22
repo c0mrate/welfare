@@ -64,6 +64,12 @@ foreach ($data as &$user) {
                             <span class="menu-item-label">Dashboard</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="supply.php" class="router-link-active has-icon">
+                            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
+                            <span class="menu-item-label">Supply</span>
+                        </a>
+                    </li>
                 </ul>
                 <p class="menu-label">Examples</p>
                 <ul class="menu-list">

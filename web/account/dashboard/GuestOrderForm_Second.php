@@ -1,19 +1,3 @@
-<?php
-$orderID = $_GET['orderID']; // Assuming you're getting the orderID from the URL parameter
-$data = array(
-    'ProductID' => $_POST['ProductID'], // Replace with the actual form field names
-    'ProductName' => $_POST['ProductName'],
-    'ProductQuality' => $_POST['ProductQuality'],
-    'ProductSize' => $_POST['ProductSize'],
-    'ProductColor' => $_POST['ProductColor'],
-    'ProductLength' => $_POST['ProductLength'],
-    'ProductPrice' => $_POST['ProductPrice']
-);
-
-// Call the postDataToJSON function
-postDataToJSON($orderID, $data);
-?>
-
 <!DOCTYPE html>
 <html lang="en" class="has-aside-left has-aside-mobile-transition has-navbar-fixed-top has-aside-expanded">
 
@@ -42,6 +26,12 @@ postDataToJSON($orderID, $data);
                         <a href="Dashboard.php" class="has-icon">
                             <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
                             <span class="menu-item-label">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="supply.php" class="router-link-active has-icon">
+                            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
+                            <span class="menu-item-label">Supply</span>
                         </a>
                     </li>
                 </ul>

@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
+  $username = $_SESSION['username'];
 }
 if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
-    exit();
+  header("Location: ../login.php");
+  exit();
 }
 ?>
 <?php
@@ -148,6 +148,12 @@ if ($user) {
               <a href="Dashboard.php" class="has-icon">
                 <span class="icon"><i class="mdi mdi-buffer default"></i></span>
                 <span class="menu-item-label">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="supply.php" class="router-link-active has-icon">
+                <span class="icon"><i class="mdi mdi-buffer default"></i></span>
+                <span class="menu-item-label">Supply</span>
               </a>
             </li>
           </ul>

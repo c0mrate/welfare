@@ -1,0 +1,120 @@
+[
+    {
+        "supplyID":"A001",
+        "supplyName":"pen",
+        "supplyPrice":200.00,
+        "updateDate":"",
+        "wherehouse": [
+            {
+                "main_": [
+                    {
+                        "name": "คลังสินค้าหลัก",
+                        "quality": 200
+                    }
+                ],
+                "sub_": [
+                    {
+                        "name": "หน้าร้าน",
+                        "quality": 200
+                    }
+                ],
+                "tem_": [
+                    {
+                        "name": "ระยอง",
+                        "quality": 200
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "supplyID":"A002",
+        "supplyName":"shirt",
+        "supplyPrice":250.00,
+        "updateDate":"",
+        "wherehouse": [
+            {
+                "main_": [
+                    {
+                        "name": "คลังสินค้าหลัก",
+                        "quality": 200
+                    }
+                ],
+                "sub_": [
+                    {
+                        "name": "หน้าร้าน",
+                        "quality": 200
+                    }
+                ],
+                "tem_": [
+                    {
+                        "name": "ระยอง",
+                        "quality": 200
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "supplyID":"A003",
+        "supplyName":"plants",
+        "supplyPrice":250.00,
+        "updateDate":"",
+        "wherehouse": [
+            {
+                "main_": [
+                    {
+                        "name": "คลังสินค้าหลัก",
+                        "quality": 200
+                    }
+                ],
+                "sub_": [
+                    {
+                        "name": "หน้าร้าน",
+                        "quality": 200
+                    }
+                ],
+                "tem_": [
+                    {
+                        "name": "ระยอง",
+                        "quality": 200
+                    }
+                ],
+                "test": [
+                    {
+                        "name": "คลังสินค้าสำรอง",
+                        "quality": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "supplyID":"A004",
+        "supplyName":"clock",
+        "supplyPrice":990.00,
+        "updateDate":"",
+        "wherehouse": [
+            {
+                "main_": [
+                    {
+                        "name": "คลังสินค้าหลัก",
+                        "quality": 120
+                    }
+                ],
+                "sub_": [
+                    {
+                        "name": "หน้าร้าน",
+                        "quality": 20
+                    }
+                ],
+                "tem_": [
+                    {
+                        "name": "ระยอง",
+                        "quality": 10
+                    }
+                ]
+            }
+        ]
+    }
+]

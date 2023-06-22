@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
+  $username = $_SESSION['username'];
 }
 if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
-    exit();
+  header("Location: ../login.php");
+  exit();
 }
 ?>
 <?php
@@ -92,6 +92,12 @@ $users = json_decode($usersData, true);
             <a href="Dashboard.php" class="has-icon">
               <span class="icon"><i class="mdi mdi-buffer default"></i></span>
               <span class="menu-item-label">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="supply.php" class="router-link-active has-icon">
+              <span class="icon"><i class="mdi mdi-buffer default"></i></span>
+              <span class="menu-item-label">Supply</span>
             </a>
           </li>
         </ul>
@@ -189,36 +195,76 @@ $users = json_decode($usersData, true);
               <table class="table is-fullwidth is-striped is-hoverable is-fullwidth">
                 <thead>
                   <tr>
-                    <th></th>
-                    <th>Username</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Line</th>
-                    <th>Address</th>
-                    <th>Created</th>
+                    <th>Date</th>
+                    <th>Order ID</th>
+                    <th>Status</th>
+                    <th>Product</th>
+                    <th>Quality</th>
+                    <th>Size</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th>Total</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php foreach ($users as $user) : ?>
                     <tr>
-
-                      <td class="is-image-cell">
-                        <div class="image">
-                          <img src="<?= $user['img']; ?>" class="is-rounded">
-                        </div>
+                      <td data-label="Date"><?= $user['order'][0]['orderDate']; ?></td>
+                      <td data-label="Order ID"><?= $user['order'][0]['orderID']; ?></td>
+                      <td data-label="Status">Pedding</td>
+                      <td data-label="Product">
+                        <ul>
+                          <?php foreach ($user['order'] as $order) : ?>
+                            <?php foreach ($order['product'] as $product) : ?>
+                              <li><?= $product['ProductName']; ?></li>
+                            <?php endforeach; ?>
+                          <?php endforeach; ?>
+                        </ul>
                       </td>
-
-                      <td data-label="Username"><?= $user['username']; ?></td>
-                      <td data-label="Name"><?= $user['user_information'][0]['name']; ?></td>
-                      <td data-label="Email"><?= $user['email']; ?></td>
-                      <td data-label="Phone"><?= $user['user_information'][0]['phone']; ?></td>
-                      <td data-label="Line"><?= $user['user_information'][0]['line']; ?></td>
-                      <td data-label="Address"><?= $user['user_information'][0]['province']; ?></td>
-                      <td data-label="Username"><?= $user['createDate']; ?></td>
+                      <td data-label="Product">
+                        <ul>
+                          <?php foreach ($user['order'] as $order) : ?>
+                            <?php foreach ($order['product'] as $product) : ?>
+                              <li><?= $product['ProductQuality']; ?></li>
+                            <?php endforeach; ?>
+                          <?php endforeach; ?>
+                        </ul>
+                      </td>
+                      <td data-label="Product">
+                        <ul>
+                          <?php foreach ($user['order'] as $order) : ?>
+                            <?php foreach ($order['product'] as $product) : ?>
+                              <li><?= $product['ProductSize']; ?></li>
+                            <?php endforeach; ?>
+                          <?php endforeach; ?>
+                        </ul>
+                      </td>
+                      <td data-label="Product">
+                        <ul>
+                          <?php foreach ($user['order'] as $order) : ?>
+                            <?php foreach ($order['product'] as $product) : ?>
+                              <li><?= $product['ProductColor']; ?></li>
+                            <?php endforeach; ?>
+                          <?php endforeach; ?>
+                        </ul>
+                      </td>
+                      <td data-label="Product">
+                        <ul>
+                          <?php foreach ($user['order'] as $order) : ?>
+                            <?php foreach ($order['product'] as $product) : ?>
+                              <li><?= number_format($product['ProductPrice'], 2); ?></li>
+                            <?php endforeach; ?>
+                          <?php endforeach; ?>
+                        </ul>
+                      </td>
+                      <td data-label="Product">
+                        <ul>
+                          <li>999.00</li>
+                        </ul>
+                      </td>
                       <td class="is-actions-cell">
                         <div class="buttons is-right">
-                          <a href="profile.php?userID=<?= $user['userID']; ?>" class="button is-small is-primary" type="button">
+                          <a href="" class="button is-small is-primary" type="button">
                             <span class="icon"><i class="mdi mdi-eye"></i></span>
                           </a>
                           <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
@@ -228,7 +274,7 @@ $users = json_decode($usersData, true);
                       </td>
                     </tr>
                   <?php endforeach; ?>
-                </tbody>
+                </tbody><br>
               </table>
             </div>
           </div>

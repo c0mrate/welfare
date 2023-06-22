@@ -18,5 +18,25 @@
                 "zipcode": "11000"
             }
         ]
+    },
+    {
+        "userID": "STU020122323",
+        "createDate": "2023-06-22 03:21:24",
+        "role": "STU",
+        "img": "https:\/\/api.dicebear.com\/6.x\/initials\/svg?seed=SD&backgroundColor=3949ab",
+        "username": "test01",
+        "email": "test01@gmail.com",
+        "password": "1",
+        "permission": "1",
+        "user_information": [
+            {
+                "name": "Thipprawa",
+                "phone": "0950640676",
+                "line": "inilll",
+                "address": "145 \u0e2a\u0e38\u0e04\u0e19\u0e18\u0e2a\u0e27\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e34\u0e4c 14 \u0e25\u0e32\u0e14\u0e1e\u0e23\u0e49\u0e32\u0e27 \u0e25\u0e32\u0e14\u0e1e\u0e23\u0e49\u0e32\u0e27",
+                "province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+                "zipcode": "10230"
+            }
+        ]
     }
 ]

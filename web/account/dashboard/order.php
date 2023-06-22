@@ -94,6 +94,12 @@ $users = json_decode($usersData, true);
               <span class="menu-item-label">Dashboard</span>
             </a>
           </li>
+          <li>
+            <a href="supply.php" class="router-link-active has-icon">
+              <span class="icon"><i class="mdi mdi-buffer default"></i></span>
+              <span class="menu-item-label">Supply</span>
+            </a>
+          </li>
         </ul>
         <p class="menu-label">Examples</p>
         <ul class="menu-list">
@@ -195,7 +201,9 @@ $users = json_decode($usersData, true);
                     <th>Product</th>
                     <th>Quality</th>
                     <th>Size</th>
+                    <th>Color</th>
                     <th>Price</th>
+                    <th>Total</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -235,13 +243,30 @@ $users = json_decode($usersData, true);
                         <ul>
                           <?php foreach ($user['order'] as $order) : ?>
                             <?php foreach ($order['product'] as $product) : ?>
+                              <li><?= $product['ProductColor']; ?></li>
+                            <?php endforeach; ?>
+                          <?php endforeach; ?>
+                        </ul>
+                      </td>
+                      <td data-label="Product">
+                        <ul>
+                          <?php foreach ($user['order'] as $order) : ?>
+                            <?php foreach ($order['product'] as $product) : ?>
                               <li><?= number_format($product['ProductPrice'], 2); ?></li>
                             <?php endforeach; ?>
                           <?php endforeach; ?>
                         </ul>
                       </td>
+                      <td data-label="Product">
+                        <ul>
+                          <li>999.00</li>
+                        </ul>
+                      </td>
                       <td class="is-actions-cell">
                         <div class="buttons is-right">
+                          <a href="" class="button is-small is-primary" type="button">
+                            <span class="icon"><i class="mdi mdi-eye"></i></span>
+                          </a>
                           <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
                             <span class="icon"><i class="mdi mdi-trash-can"></i></span>
                           </button>
@@ -277,11 +302,7 @@ $users = json_decode($usersData, true);
       <button class="modal-close is-large jb-modal-close" aria-label="close"></button>
     </div>
   </div>
-
-  <!-- Scripts below are for demo only -->
   <script type="text/javascript" src="js/main.min.js"></script>
-
-  <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 </body>
 
