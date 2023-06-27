@@ -105,20 +105,20 @@ $users = json_decode($usersData, true);
         <ul class="menu-list">
           <li>
             <a href="users.php" class="has-icon">
-              <span class="icon"><i class="mdi mdi-table"></i></span>
+              <span class="icon"><i class="mdi mdi-buffer default"></i></span>
               <span class="menu-item-label">Users</span>
             </a>
           </li>
           <li>
             <a href="order.php" class="is-active has-icon">
-              <span class="icon"><i class="mdi mdi-table"></i></span>
+              <span class="icon"><i class="mdi mdi-buffer default"></i></span>
               <span class="menu-item-label">Orders</span>
             </a>
           </li>
           <li>
           <li>
             <a href="sell.php" class="has-icon">
-              <span class="icon"><i class="mdi mdi-table"></i></span>
+              <span class="icon"><i class="mdi mdi-buffer default"></i></span>
               <span class="menu-item-label">Sell</span>
             </a>
           </li>
@@ -154,8 +154,13 @@ $users = json_decode($usersData, true);
           <div class="level-item">
             <div class="buttons is-right">
               <a href="../account/login.php" target="_blank" class="button is-primary">
-                <span class="icon"><i class=""></i></span>
-                <span>Register</span>
+                <span>กำหนดวันที่</span>
+              </a>
+              <a href="../account/login.php" target="_blank" class="button is-primary">
+                <span>export</span>
+              </a>
+              <a href="../account/login.php" target="_blank" class="button is-primary">
+                <span>ปรื้นรายการสั่งซื้อสินค้าทั้งหมด</span>
               </a>
             </div>
           </div>
@@ -168,7 +173,7 @@ $users = json_decode($usersData, true);
           <div class="level-left">
             <div class="level-item">
               <h1 class="title">
-                Responsive Tables
+                รายการสั่งซื้อสินค้าทั้งหมด
               </h1>
             </div>
           </div>
@@ -179,11 +184,70 @@ $users = json_decode($usersData, true);
       </div>
     </section>
     <section class="section is-main-section">
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="card tile is-child">
+            <div class="card-content">
+              <div class="level is-mobile">
+                <div class="level-item">
+                  <div class="is-widget-label">
+                    <h3 class="subtitle is-spaced">
+                      รายการสั่งซื้อ<br>
+                      วันที่ 21/06/2566
+                    </h3>
+                    <h1 class="title">
+                      3 รายการ
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <div class="card tile is-child">
+            <div class="card-content">
+              <div class="level is-mobile">
+                <div class="level-item">
+                  <div class="is-widget-label">
+                    <h3 class="subtitle is-spaced">
+                      จำนวนสินค้าที่ขาย<br>
+                      วันที่ 21/06/2566
+                    </h3>
+                    <h1 class="title">
+                      7 จำนวน
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <div class="card tile is-child">
+            <div class="card-content">
+              <div class="level is-mobile">
+                <div class="level-item">
+                  <div class="is-widget-label">
+                    <h3 class="subtitle is-spaced">
+                      มูลค่าสินค้าที่ขาย<br>
+                      วันที่ 21/06/2566
+                    </h3>
+                    <h1 class="title">
+                      1,450.00 บาท
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="card has-table">
         <header class="card-header">
           <p class="card-header-title">
             <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-            Clients
+            รายการ
           </p>
           <a href="#" class="card-header-icon">
             <span class="icon"><i class="mdi mdi-reload"></i></span>
@@ -197,7 +261,7 @@ $users = json_decode($usersData, true);
                   <tr>
                     <th>Date</th>
                     <th>Order ID</th>
-                    <th>Status</th>
+                    <th>ร้านค้า</th>
                     <th>Product</th>
                     <th>Quality</th>
                     <th>Size</th>
@@ -211,7 +275,7 @@ $users = json_decode($usersData, true);
                     <tr>
                       <td data-label="Date"><?= $user['order'][0]['orderDate']; ?></td>
                       <td data-label="Order ID"><?= $user['order'][0]['orderID']; ?></td>
-                      <td data-label="Status">Pedding</td>
+                      <td data-label="Status">online</td>
                       <td data-label="Product">
                         <ul>
                           <?php foreach ($user['order'] as $order) : ?>

@@ -105,20 +105,20 @@ $users = json_decode($usersData, true);
         <ul class="menu-list">
           <li>
             <a href="users.php" class="is-active has-icon">
-              <span class="icon"><i class="mdi mdi-table"></i></span>
+              <span class="icon"><i class="mdi mdi-buffer default"></i></span>
               <span class="menu-item-label">Users</span>
             </a>
           </li>
           <li>
             <a href="order.php" class="has-icon">
-              <span class="icon"><i class="mdi mdi-table"></i></span>
+              <span class="icon"><i class="mdi mdi-buffer default"></i></span>
               <span class="menu-item-label">Orders</span>
             </a>
           </li>
           <li>
           <li>
             <a href="sell.php" class="has-icon">
-              <span class="icon"><i class="mdi mdi-table"></i></span>
+              <span class="icon"><i class="mdi mdi-buffer default"></i></span>
               <span class="menu-item-label">Sell</span>
             </a>
           </li>
@@ -155,7 +155,7 @@ $users = json_decode($usersData, true);
             <div class="buttons is-right">
               <a href="../account/login.php" target="_blank" class="button is-primary">
                 <span class="icon"><i class=""></i></span>
-                <span>Register</span>
+                <span>สมัคร</span>
               </a>
             </div>
           </div>
@@ -168,7 +168,7 @@ $users = json_decode($usersData, true);
           <div class="level-left">
             <div class="level-item">
               <h1 class="title">
-                Responsive Tables
+                รายชื่อ Users ทั้งหมด
               </h1>
             </div>
           </div>

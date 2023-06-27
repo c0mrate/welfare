@@ -147,20 +147,20 @@ foreach ($data as $item) {
                 <ul class="menu-list">
                     <li>
                         <a href="users.php" class="has-icon">
-                            <span class="icon"><i class="mdi mdi-table"></i></span>
+                            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
                             <span class="menu-item-label">Users</span>
                         </a>
                     </li>
                     <li>
                         <a href="order.php" class="has-icon">
-                            <span class="icon"><i class="mdi mdi-table"></i></span>
+                            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
                             <span class="menu-item-label">Orders</span>
                         </a>
                     </li>
                     <li>
                     <li>
                         <a href="sell.php" class="has-icon">
-                            <span class="icon"><i class="mdi mdi-table"></i></span>
+                            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
                             <span class="menu-item-label">Sell</span>
                         </a>
                     </li>
@@ -286,10 +286,10 @@ foreach ($data as $item) {
                                 <div class="level-item">
                                     <div class="is-widget-label">
                                         <h3 class="subtitle is-spaced">
-                                            Performance
+                                            สินค้าคงเหลือน้อยกว่า 20
                                         </h3>
                                         <h1 class="title">
-                                            0%
+                                            1 รายการ
                                         </h1>
                                     </div>
                                 </div>
@@ -368,7 +368,7 @@ foreach ($data as $item) {
                                                 </td>
                                                 <td class="is-actions-cell">
                                                     <div class="buttons is-right">
-                                                        <a href="" class="button is-small is-primary" type="button">
+                                                        <a href="supply-edit.php" class="button is-small is-primary" type="button">
                                                             <span class="icon"><i class="mdi mdi-eye"></i></span>
                                                         </a>
                                                         <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">

@@ -134,20 +134,20 @@ if (!isset($_SESSION['username'])) {
       <ul class="menu-list">
         <li>
           <a href="users.php" class="has-icon">
-            <span class="icon"><i class="mdi mdi-table"></i></span>
+            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
             <span class="menu-item-label">Users</span>
           </a>
         </li>
         <li>
           <a href="order.php" class="has-icon">
-            <span class="icon"><i class="mdi mdi-table"></i></span>
+            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
             <span class="menu-item-label">Orders</span>
           </a>
         </li>
         <li>
         <li>
           <a href="sell.php" class="has-icon">
-            <span class="icon"><i class="mdi mdi-table"></i></span>
+            <span class="icon"><i class="mdi mdi-buffer default"></i></span>
             <span class="menu-item-label">Sell</span>
           </a>
         </li>
